@@ -1,5 +1,5 @@
 import React from 'react';
-import profile from '../../public/images/profile.png';
+import profile from '../../public/images/me.png';
 import { links } from '../../data';
 import Image from 'next/image';
 import Link from 'next/link';

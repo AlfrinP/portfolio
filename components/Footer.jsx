@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <div className="bg-white h-[80px] flex items-center justify-center gap-3">
+    <div className="bg-white h-[80px] min-h-fit sm:flex-nowrap flex-wrap flex items-center justify-center gap-3">
       <Link
         target="/"
         href={links.linkedin}

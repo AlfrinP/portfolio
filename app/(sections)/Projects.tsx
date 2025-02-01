@@ -15,18 +15,18 @@ function Projects() {
         Featured Works
       </span>
       {work.map((item, index) => (
-        <div className="center flex-col lg:flex-row h-fit" key={index}>
-          <div className="h-full w-full lg:w-1/2 p-5 flex items-center justify-center">
-            <div className="mockup-browser border bg-base-300 w-full h-full">
+        <div className="center flex-col w-full lg:flex-row h-fit" key={index}>
+          <div className="size-full lg:w-1/2 p-5 flex items-center justify-center">
+            <div className="mockup-browser border bg-base-300 size-full">
               <div className="mockup-browser-toolbar text-white">
                 <div className="input">{item.demo ? item.demo : item.github}</div>
               </div>
               <div className="flex justify-center bg-base-200">
                 <Image
-                  width={50}
-                  height={50}
+                  width={1500}
+                  height={1500}
                   src={item.img}
-                  className="block w-full h-full aspect-auto object-contain"
+                  className="block size-full object-contain"
                   alt={item.title}
                 />
               </div>
@@ -81,10 +81,10 @@ function Projects() {
       ))}
 
       {/* <div className="center flex-col lg:flex-row h-fit">
-        <div className="h-full w-full lg:w-1/2 p-5 flex items-center justify-center">
+        <div className="size-full lg:w-1/2 p-5 flex items-center justify-center">
           <Image alt="image" width={50} height={50}
             src={project}
-            className="rounded-lg homeButton block w-full h-full"
+            className="rounded-lg homeButton block size-full"
           />
         </div>
         <div className="w-full lg:w-1/2 h-full flex flex-col items-start justify-center px-5 py-3 gap-4">

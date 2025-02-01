@@ -10,7 +10,7 @@ function Experience() {
       <span className="w-full text-left text-4xl font-bold py-10 text-[#2F1C6A]">
         MY EXPERIENCE
       </span>
-      <div className="flex items-center flex-col md:flex-row w-full h-full justify-center">
+      <div className="flex items-center flex-col md:flex-row size-full justify-center">
         <div className=" hidden md:flex h-full w-1/2 p-5 center"></div>
         <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-start px-5 py-3 gap-5">
           {experience.map((item, index) => (
