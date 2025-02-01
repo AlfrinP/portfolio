@@ -13,7 +13,8 @@ function TechStack() {
         style={{ width: '98vw' }}
         speed={100}
         pauseOnHover
-        gradient={'white'}
+        gradient={true}
+        autoFill={true}
         className="overflow-clip cursor-pointer"
       >
         {tech.map((item, index) => (
