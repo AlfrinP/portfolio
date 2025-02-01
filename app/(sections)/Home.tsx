@@ -12,13 +12,13 @@ function Home() {
     >
       <div className="flex flex-col gap-3 items-center text-center">
         <div className="text-xl sm:text-2xl md:text-4xl font-bold">
-          Hello 👋🏻 <span className="p-1 bg-primary text-white">Alfrin</span> here, your dedicated{' '}
+          Hello 👋🏻 <span className="p-1 bg-primary text-white">Alfrin</span> here&#44; your dedicated{' '}
           <span className="text-primary">Full Stack Web & App developer</span>.
         </div>
         <div className=" text-sm sm:text-base md:text-xl font-medium">
-          With a powerful laptop and a steaming cup of coffee, I turn challenges into solutions.
-          Each line of code shapes the future, blending innovation with precision. Crafting
-          tomorrow&#39;s possibilities, one problem at a time.
+          With a powerful laptop and a steaming cup of coffee&#44; I turn challenges into solutions.
+          Each line of code shapes the future&#44; blending innovation with precision. Crafting
+          tomorrow&#39;s possibilities&#44; one problem at a time.
         </div>
         <Link
           className=" rounded-lg bg-primary text-lg lg:text-2xl  text-white mt-4 btn homeButton"
