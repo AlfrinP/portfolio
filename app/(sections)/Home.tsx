@@ -18,13 +18,13 @@ function Home() {
         <div className=" text-sm sm:text-base md:text-xl font-medium">
           With a powerful laptop and a steaming cup of coffee, I turn challenges into solutions.
           Each line of code shapes the future, blending innovation with precision. Crafting
-          tomorrow's possibilities, one problem at a time.
+          tomorrow&#39;s possibilities, one problem at a time.
         </div>
         <Link
           className=" rounded-lg bg-primary text-lg lg:text-2xl  text-white mt-4 btn homeButton"
           href={links.freelance}
         >
-          Hire Me!
+          Hire Me&#33;
         </Link>
         <Image src={profile} className="grayscale" alt="profile" />
       </div>
