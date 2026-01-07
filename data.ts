@@ -85,7 +85,6 @@ const links = {
   github: 'https://github.com/AlfrinP',
   hackerrank: 'https://www.hackerrank.com/profile/alfrinpoulose',
   linkedin: 'https://www.linkedin.com/in/alfrinpoulose/',
-  freelance: 'https://www.upwork.com/freelancers/~019e2fdde3abc19c30?mp_source=share',
 };
 
 export { work, experience, links };

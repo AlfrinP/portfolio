@@ -1,8 +1,6 @@
 import React from 'react';
 import profile from '../../public/images/me.png';
-import { links } from '../../data';
 import Image from 'next/image';
-import Link from 'next/link';
 
 function Home() {
   return (
@@ -20,12 +18,6 @@ function Home() {
           Each line of code shapes the future, blending innovation with precision. Crafting
           tomorrow&#39;s possibilities, one problem at a time.
         </div>
-        <Link
-          className=" rounded-lg bg-primary text-lg lg:text-2xl  text-white mt-4 btn homeButton"
-          href={links.freelance}
-        >
-          Hire Me&#33;
-        </Link>
         <Image src={profile} className="grayscale" alt="profile" />
       </div>
     </div>
