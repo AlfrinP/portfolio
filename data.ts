@@ -41,7 +41,7 @@ const experience = [
     company: 'Hatio Innov Pvt Ltd',
     date: 'April - Dec 2025',
     description:
-      'As a Frontend Developer Intern at Levantate Labs, I spearheaded the redesign of the company website, introducing a modern UI to elevate user engagement and satisfaction. Leveraged a tech stack comprising Next.js, Tailwind CSS, Mantine UI, and various React libraries to implement intricate website functionalities and seamless user experiences. Played a key role in enhancing SEO strategies, resulting in notable improvements in website visibility and search engine rankings.',
+      'As a Software Engineering Intern, I contributed to the development of a scalable system monitoring solution using Spring Boot, enabling efficient tracking of system health across multiple environments. Implemented CI pipelines and executed manual deployments to ensure reliable and smooth release cycles. Designed and optimized backend data models using Oracle DB, maintaining a clean and high-performance system architecture. Additionally, developed Android applications with intuitive UI/UX using Jetpack Compose, delivering user-friendly and efficient mobile experiences. Collaborated closely across frontend and backend teams to build cohesive, high-quality solutions.',
   },
   {
     position: 'Frontend Developer Intern',
