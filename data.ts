@@ -1,23 +1,6 @@
-import django from './public/images/django.svg';
-import next from './public/images/next.svg';
-import nginx from './public/images/nginx.svg';
-import postgresql from './public/images/postgresql.svg';
-import sass from './public/images/sass.svg';
-import tailwind from './public/images/tailwind.svg';
-import redux from './public/images/redux.svg';
 import techletics from './public/images/projects/techletics.png';
 import telegram from './public/images/projects/telegram.png';
 import hacknite from './public/images/projects/hacknight.png';
-
-const tech = [
-  { img: django, text: 'django' },
-  { img: next, text: 'next.js' },
-  { img: nginx, text: 'nginx' },
-  { img: postgresql, text: 'postgresql' },
-  { img: sass, text: 'sass' },
-  { img: tailwind, text: 'tailwind' },
-  { img: redux, text: 'redux' },
-];
 
 const work = [
   {
@@ -54,9 +37,16 @@ const work = [
 
 const experience = [
   {
+    position: 'SDE Intern',
+    company: 'Hatio Innov Pvt Ltd',
+    date: 'April - Dec 2025',
+    description:
+      'As a Frontend Developer Intern at Levantate Labs, I spearheaded the redesign of the company website, introducing a modern UI to elevate user engagement and satisfaction. Leveraged a tech stack comprising Next.js, Tailwind CSS, Mantine UI, and various React libraries to implement intricate website functionalities and seamless user experiences. Played a key role in enhancing SEO strategies, resulting in notable improvements in website visibility and search engine rankings.',
+  },
+  {
     position: 'Frontend Developer Intern',
     company: 'Levantate Labs',
-    date: '2024 - Present',
+    date: 'Sept - Jan 2025',
     description:
       'As a Frontend Developer Intern at Levantate Labs, I spearheaded the redesign of the company website, introducing a modern UI to elevate user engagement and satisfaction. Leveraged a tech stack comprising Next.js, Tailwind CSS, Mantine UI, and various React libraries to implement intricate website functionalities and seamless user experiences. Played a key role in enhancing SEO strategies, resulting in notable improvements in website visibility and search engine rankings.',
   },
@@ -98,4 +88,4 @@ const links = {
   freelance: 'https://www.upwork.com/freelancers/~019e2fdde3abc19c30?mp_source=share',
 };
 
-export { tech, work, experience, links };
+export { work, experience, links };
