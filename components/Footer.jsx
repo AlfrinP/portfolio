@@ -1,4 +1,3 @@
-import React from 'react';
 import { links } from '@/data';
 import Link from 'next/link';
 

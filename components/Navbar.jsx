@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import close from '../public/images/close.svg';
 import burger from '../public/images/burger-menu.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
