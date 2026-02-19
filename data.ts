@@ -6,6 +6,8 @@ const work = [
   {
     title: 'Hacknite',
     img: hacknite,
+    shortDescription:
+      'A 24-hour hackathon platform bringing together students, professionals, and tech enthusiasts from various technology fields.',
     description:
       'Hacknite is a 24-hour hackathon organized by the CS Department of Christ College of Engineering, Irinjalakuda. This event brings together students, professionals, and enthusiasts from various technology fields.',
     tech_stack: ['React', 'Tailwind CSS', 'Daisy UI'],
@@ -16,6 +18,8 @@ const work = [
   {
     title: "Techletics '24",
     img: techletics,
+    shortDescription:
+      'Tech fest website uniting students, professionals, and technology enthusiasts from diverse fields with interactive features.',
     description:
       "Techletics '24 is a tech fest organized by Christ College of Engineering, Irinjalakuda. This event unites students, professionals, and technology enthusiasts from diverse fields.",
     tech_stack: ['Next.js', 'Tailwind CSS', 'Daisy UI'],
@@ -26,6 +30,8 @@ const work = [
   {
     title: 'Telegram Clone',
     img: telegram,
+    shortDescription:
+      'A feature-rich messaging application clone replicating the core functionality and user experience of Telegram.',
     description:
       'Telegram Clone is a project aimed at replicating the features and functionality of the popular messaging application, Telegram.',
     tech_stack: ['React', 'Tailwind CSS'],

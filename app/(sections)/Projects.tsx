@@ -1,139 +1,85 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { work } from '../../data';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Projects() {
+export default function Projects() {
   return (
     <div
       id="work"
-      className="w-full font-primary flex flex-col items-center justify-center gap-1 px-5 sm:px-8 md:px-11 lg:px-14 bg-white text-black"
+      className="w-full font-primary flex flex-col items-center justify-center px-5 sm:px-8 md:px-11 lg:px-14 py-16 bg-white text-black"
     >
-      <span className="w-full text-left text-4xl font-bold py-10 text-[#2F1C6A]">
-        Featured Works
-      </span>
-      {work.map((item, index) => (
-        <div className="center flex-col w-full lg:flex-row h-fit" key={index}>
-          <div className="size-full lg:w-1/2 p-5 flex items-center justify-center">
-            <div className="mockup-browser border bg-base-300 size-full">
-              <div className="mockup-browser-toolbar text-white">
-                <div className="input">{item.demo ? item.demo : item.github}</div>
-              </div>
-              <div className="flex justify-center bg-base-200">
+      <div className="w-full max-w-7xl">
+        <h2 className="text-4xl font-bold mb-12 text-[#2F1C6A]">
+          Featured Works
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {work.map((item, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col"
+            >
+              {/* Image Container with Hover Overlay */}
+              <div className="relative aspect-video overflow-hidden">
                 <Image
-                  width={1500}
-                  height={1500}
+                  width={600}
+                  height={400}
                   src={item.img}
-                  className="block size-full object-contain"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   alt={item.title}
                 />
+                
+                {/* Hover Overlay with Buttons */}
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <Link
+                    href={item.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-full p-4 hover:scale-110 transition-transform duration-200"
+                    aria-label="View GitHub repository"
+                  >
+                    <FontAwesomeIcon icon={faGithub} className="w-6 h-6 text-gray-900" />
+                  </Link>
+                  <Link
+                    href={item.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-full p-4 hover:scale-110 transition-transform duration-200"
+                    aria-label="View live demo"
+                  >
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="w-6 h-6 text-gray-900" />
+                  </Link>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 h-full flex flex-col items-start justify-center px-5 py-3 gap-4">
-            <h2 className="text-3xl font-semibold text-[#2F1C6A]">{item.title}</h2>
-            <p className="text-left">{item.description}</p>
-            <div className="w-full flex flex-col items-center justify-center gap-2">
-              <h2 className="w-full text-left font-semibold">PROJECT INFO</h2>
-              <hr className="w-full" />
-              <div className="flex items-center w-full justify-between px-2">
-                <div>Tech</div>
-                <ul className="flex items-center justify-end w-full flex-wrap gap-2">
-                  {item.tech_stack.map((techItem, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="w-fit px-2 border-2 border-black rounded-lg text-[#2E2E48]"
-                      >
-                        {techItem}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <hr className="w-full" />
-              <div className="flex items-center w-full justify-between px-2">
-                <div>Year</div>
-                <div>{item.year}</div>
-              </div>
-              <hr className="w-full" />
-            </div>
-            <div className="w-full center flex-wrap gap-3">
-              <Link
-                href={item.demo}
-                target="/"
-                className="text-[#2F1C6A] font-primary text-sm sm:text-base md:text-lg lg:text-xl btn btn-link"
-              >
-                LIVE DEMO🡭
-              </Link>
-              <Link
-                href={item.github}
-                target="/"
-                className="text-[#2F1C6A] font-primary text-sm sm:text-base md:text-lg lg:text-xl btn btn-link center gap-2"
-              >
-                SEE ON GITHUB <FontAwesomeIcon icon={faGithub} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))}
 
-      {/* <div className="center flex-col lg:flex-row h-fit">
-        <div className="size-full lg:w-1/2 p-5 flex items-center justify-center">
-          <Image alt="image" width={50} height={50}
-            src={project}
-            className="rounded-lg homeButton block size-full"
-          />
+              {/* Card Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-[#2F1C6A] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                  {item.shortDescription}
+                </p>
+                
+                {/* Tech Stack Badges */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {item.tech_stack.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full border border-gray-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="w-full lg:w-1/2 h-full flex flex-col items-start justify-center px-5 py-3 gap-4">
-          <h2 className="text-3xl font-semibold text-[#2F1C6A]">Project 1</h2>
-          <p className="text-left ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            commodi id hic iure, illo sunt laborum nesciunt placeat totam
-            pariatur eligendi aliquid eveniet, necessitatibus facilis assumenda
-            facere aliquam saepe deserunt.
-          </p>
-          <div className="w-full flex flex-col items-center justify-center gap-2">
-            <h2 className="w-full text-left font-semibold">PROJECT INFO</h2>
-            <hr className="w-full" />
-            <div className="flex items-center w-full justify-between px-2">
-              <div>Tech</div>
-              <ul className="flex items-center justify-end w-full flex-wrap gap-2">
-                <li className="w-fit px-2 border-2 border-black rounded-lg text-[#2E2E48]">
-                  HTML
-                </li>
-                <li className="w-fit px-2 border-2 border-black rounded-lg text-[#2E2E48]">
-                  HTML
-                </li>
-                <li className="w-fit px-2 border-2 border-black rounded-lg text-[#2E2E48]">
-                  HTML
-                </li>
-                <li className="w-fit px-2 border-2 border-black rounded-lg text-[#2E2E48]">
-                  HTML
-                </li>
-              </ul>
-            </div>
-            <hr className="w-full" />
-            <div className="flex items-center w-full justify-between px-2">
-              <div>Year</div>
-              <div>2023</div>
-            </div>
-            <hr className="w-full" />
-          </div>
-          <div className="w-full center flex-wrap gap-3">
-            <div className="text-[#2F1C6A] font-primary text-sm sm:text-base md:text-lg lg:text-xl btn btn-link">
-              LIVE DEMO🡭
-            </div>
-            <div className="text-[#2F1C6A] font-primary text-sm sm:text-base md:text-lg lg:text-xl btn btn-link center gap-2">
-              SEE ON GITHUB <FontAwesomeIcon icon={faGithub} />
-            </div>
-          </div>
-        </div>
-      </div> */}
+      </div>
     </div>
   );
 }
-
-export default Projects;
