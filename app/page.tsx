@@ -10,7 +10,7 @@ export default function Page() {
       <Navbar />
       <Home />
       <Projects />
-      <Experience />
+      {/* <Experience /> */}
       <Footer />
     </div>
   );

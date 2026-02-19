@@ -50,7 +50,7 @@ function Navbar() {
                       Work
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link
                       href="#exp"
                       onClick={handleClick}
@@ -58,7 +58,7 @@ function Navbar() {
                     >
                       Experience
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </>
             ) : (
@@ -91,12 +91,12 @@ function Navbar() {
             >
               Work
             </Link>
-            <Link
+            {/* <Link
               href="#exp"
               className="link link-hover btn btn-ghost hover:bg-transparent font-semibold text-lg"
             >
               Experience
-            </Link>
+            </Link> */}
           </div>
           <Link
             href={links.linkedin}
