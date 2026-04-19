@@ -3,7 +3,12 @@
 
 @font-face {
   font-family: "Neue";
-  src: url("../public/fonts/NeueMachina-Regular.woff2") format("woff2");
+  src: url("/fonts/NeueMachina-Regular.woff2") format("woff2");
+}
+
+@theme {
+  --color-primary: rgba(111, 112, 242, 1);
+  --font-primary: "Neue";
 }
 
 @layer components {
