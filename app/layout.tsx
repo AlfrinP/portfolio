@@ -1,61 +1,66 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Alfrin Poulose | Frontend Developer & Software Engineer',
-    template: '%s | Alfrin Poulose'
+    default: "Alfrin Poulose | Frontend Developer & Software Engineer",
+    template: "%s | Alfrin Poulose",
   },
-  description: 'Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android. Formerly at Hatio Innov and Levantate Labs.',
+  description:
+    "Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android. Formerly at Hatio Innov and Levantate Labs.",
   keywords: [
-    'Alfrin Poulose',
-    'Frontend Developer',
-    'Software Engineer',
-    'React Developer',
-    'Next.js Developer',
-    'Full Stack Developer',
-    'Web Developer',
-    'Portfolio',
-    'JavaScript',
-    'TypeScript',
-    'Tailwind CSS',
-    'Spring Boot',
-    'Android Developer',
-    'Jetpack Compose'
+    "Alfrin Poulose",
+    "Frontend Developer",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "Full Stack Developer",
+    "Web Developer",
+    "Portfolio",
+    "JavaScript",
+    "TypeScript",
+    "Tailwind CSS",
+    "Spring Boot",
+    "Android Developer",
+    "Jetpack Compose",
   ],
-  authors: [{ name: 'Alfrin Poulose' }],
-  creator: 'Alfrin Poulose',
-  publisher: 'Alfrin Poulose',
+  authors: [{ name: "Alfrin Poulose" }],
+  creator: "Alfrin Poulose",
+  publisher: "Alfrin Poulose",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  ),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    title: 'Alfrin Poulose | Frontend Developer & Software Engineer',
-    description: 'Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android. Formerly at Hatio Innov and Levantate Labs.',
-    url: '/',
-    siteName: 'Alfrin Poulose Portfolio',
-    locale: 'en_US',
-    type: 'website',
+    title: "Alfrin Poulose | Frontend Developer & Software Engineer",
+    description:
+      "Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android. Formerly at Hatio Innov and Levantate Labs.",
+    url: "/",
+    siteName: "Alfrin Poulose Portfolio",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: '/og-image.png',
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: 'Alfrin Poulose - Frontend Developer & Software Engineer',
+        alt: "Alfrin Poulose - Frontend Developer & Software Engineer",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Alfrin Poulose | Frontend Developer & Software Engineer',
-    description: 'Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android.',
-    images: ['/og-image.png'],
+    card: "summary_large_image",
+    title: "Alfrin Poulose | Frontend Developer & Software Engineer",
+    description:
+      "Software Engineering professional with experience in Frontend Development, React, Next.js, Spring Boot, and Android.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -63,9 +68,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };

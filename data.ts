@@ -1,96 +1,97 @@
-import techletics from './public/images/projects/techletics.png';
-import telegram from './public/images/projects/telegram.png';
-import hacknite from './public/images/projects/hacknight.png';
+import techletics from "./public/images/projects/techletics.png";
+import telegram from "./public/images/projects/telegram.png";
+import hacknite from "./public/images/projects/hacknight.png";
 
 const work = [
   {
-    title: 'Hacknite',
+    title: "Hacknite",
     img: hacknite,
     shortDescription:
-      'A 24-hour hackathon platform bringing together students, professionals, and tech enthusiasts from various technology fields.',
+      "A 24-hour hackathon platform bringing together students, professionals, and tech enthusiasts from various technology fields.",
     description:
-      'Hacknite is a 24-hour hackathon organized by the CS Department of Christ College of Engineering, Irinjalakuda. This event brings together students, professionals, and enthusiasts from various technology fields.',
-    tech_stack: ['React', 'Tailwind CSS', 'Daisy UI'],
-    year: '2024',
-    github: 'https://github.com/sai-prasad-1/hacknite.cce.edu.in',
-    demo: 'https://hacknite.cce.edu.in/',
+      "Hacknite is a 24-hour hackathon organized by the CS Department of Christ College of Engineering, Irinjalakuda. This event brings together students, professionals, and enthusiasts from various technology fields.",
+    tech_stack: ["React", "Tailwind CSS", "Daisy UI"],
+    year: "2024",
+    github: "https://github.com/sai-prasad-1/hacknite.cce.edu.in",
+    demo: "https://hacknite.cce.edu.in/",
   },
   {
     title: "Techletics '24",
     img: techletics,
     shortDescription:
-      'Tech fest website uniting students, professionals, and technology enthusiasts from diverse fields with interactive features.',
+      "Tech fest website uniting students, professionals, and technology enthusiasts from diverse fields with interactive features.",
     description:
       "Techletics '24 is a tech fest organized by Christ College of Engineering, Irinjalakuda. This event unites students, professionals, and technology enthusiasts from diverse fields.",
-    tech_stack: ['Next.js', 'Tailwind CSS', 'Daisy UI'],
-    year: '2023',
-    github: 'https://github.com/sai-prasad-1/techletics24',
-    demo: 'https://techletics.cce.edu.in/',
+    tech_stack: ["Next.js", "Tailwind CSS", "Daisy UI"],
+    year: "2023",
+    github: "https://github.com/sai-prasad-1/techletics24",
+    demo: "https://techletics.cce.edu.in/",
   },
   {
-    title: 'Telegram Clone',
+    title: "Telegram Clone",
     img: telegram,
     shortDescription:
-      'A feature-rich messaging application clone replicating the core functionality and user experience of Telegram.',
+      "A feature-rich messaging application clone replicating the core functionality and user experience of Telegram.",
     description:
-      'Telegram Clone is a project aimed at replicating the features and functionality of the popular messaging application, Telegram.',
-    tech_stack: ['React', 'Tailwind CSS'],
-    year: '2023',
-    github: 'https://github.com/AlfrinP/discord_ui',
-    demo: 'https://unique-clafoutis-55acea.netlify.app',
+      "Telegram Clone is a project aimed at replicating the features and functionality of the popular messaging application, Telegram.",
+    tech_stack: ["React", "Tailwind CSS"],
+    year: "2023",
+    github: "https://github.com/AlfrinP/discord_ui",
+    demo: "https://unique-clafoutis-55acea.netlify.app",
   },
 ];
 
 const experience = [
   {
-    position: 'SDE Intern',
-    company: 'Hatio Innov Pvt Ltd',
-    date: 'April - Dec 2025',
+    position: "SDE Intern",
+    company: "Hatio Innov Pvt Ltd",
+    date: "April - Dec 2025",
     description:
-      'As a Software Engineering Intern, I contributed to the development of a scalable system monitoring solution using Spring Boot, enabling efficient tracking of system health across multiple environments. Implemented CI pipelines and executed manual deployments to ensure reliable and smooth release cycles. Designed and optimized backend data models using Oracle DB, maintaining a clean and high-performance system architecture. Additionally, developed Android applications with intuitive UI/UX using Jetpack Compose, delivering user-friendly and efficient mobile experiences. Collaborated closely across frontend and backend teams to build cohesive, high-quality solutions.',
+      "As a Software Engineering Intern, I contributed to the development of a scalable system monitoring solution using Spring Boot, enabling efficient tracking of system health across multiple environments. Implemented CI pipelines and executed manual deployments to ensure reliable and smooth release cycles. Designed and optimized backend data models using Oracle DB, maintaining a clean and high-performance system architecture. Additionally, developed Android applications with intuitive UI/UX using Jetpack Compose, delivering user-friendly and efficient mobile experiences. Collaborated closely across frontend and backend teams to build cohesive, high-quality solutions.",
   },
   {
-    position: 'Frontend Developer Intern',
-    company: 'Levantate Labs',
-    date: 'Sept - Jan 2025',
+    position: "Frontend Developer Intern",
+    company: "Levantate Labs",
+    date: "Sept - Jan 2025",
     description:
-      'As a Frontend Developer Intern at Levantate Labs, I spearheaded the redesign of the company website, introducing a modern UI to elevate user engagement and satisfaction. Leveraged a tech stack comprising Next.js, Tailwind CSS, Mantine UI, and various React libraries to implement intricate website functionalities and seamless user experiences. Played a key role in enhancing SEO strategies, resulting in notable improvements in website visibility and search engine rankings.',
+      "As a Frontend Developer Intern at Levantate Labs, I spearheaded the redesign of the company website, introducing a modern UI to elevate user engagement and satisfaction. Leveraged a tech stack comprising Next.js, Tailwind CSS, Mantine UI, and various React libraries to implement intricate website functionalities and seamless user experiences. Played a key role in enhancing SEO strategies, resulting in notable improvements in website visibility and search engine rankings.",
   },
   {
-    position: 'Academic Intern',
-    company: 'Kerala Startup Mission',
-    date: 'April - May 2024',
+    position: "Academic Intern",
+    company: "Kerala Startup Mission",
+    date: "April - May 2024",
     description:
-      'As an Academic Intern at Kerala Startup Mission, I designed and developed website UI including a dashboard using Next.js and Tailwind CSS, integrating Daisy UI for streamlined user interface components. Collaborated with stakeholders to understand requirements and deliver a user-centric design solution meeting project objectives. Gained practical experience in frontend development methodologies and project management within a startup environment.',
+      "As an Academic Intern at Kerala Startup Mission, I designed and developed website UI including a dashboard using Next.js and Tailwind CSS, integrating Daisy UI for streamlined user interface components. Collaborated with stakeholders to understand requirements and deliver a user-centric design solution meeting project objectives. Gained practical experience in frontend development methodologies and project management within a startup environment.",
   },
   {
-    position: 'Frontend Developer, Freelance',
-    company: 'Privacy Tech',
-    date: 'Oct 2023 - Dec 2023',
+    position: "Frontend Developer, Freelance",
+    company: "Privacy Tech",
+    date: "Oct 2023 - Dec 2023",
     description:
-      'As a Frontend Developer for Privacy Tech, I created a landing page for a Chrome blockchain extension. Utilized React.js and Tailwind CSS for website development.',
+      "As a Frontend Developer for Privacy Tech, I created a landing page for a Chrome blockchain extension. Utilized React.js and Tailwind CSS for website development.",
   },
   {
-    position: 'Frontend Developer',
+    position: "Frontend Developer",
     company: "Techletics '24 Website Team",
-    date: 'Feb 2024 - Mar 2024',
+    date: "Feb 2024 - Mar 2024",
     description:
       "As a Frontend Developer in the Techletics '24 Website Team, I led the website redesign to enhance user interaction and experience, utilizing Next.js, React.js, and Tailwind CSS for website development.",
   },
   {
-    position: 'Frontend Developer',
-    company: 'Hacknite Website Team',
-    date: 'Feb 2024 - Mar 2024',
+    position: "Frontend Developer",
+    company: "Hacknite Website Team",
+    date: "Feb 2024 - Mar 2024",
     description:
-      'As a Frontend Developer in the Hacknite Website Team, I played a key role in developing the website. My responsibilities included implementing design concepts, optimizing performance, and ensuring a seamless user experience.',
+      "As a Frontend Developer in the Hacknite Website Team, I played a key role in developing the website. My responsibilities included implementing design concepts, optimizing performance, and ensuring a seamless user experience.",
   },
 ];
 
 const links = {
-  resume: 'https://drive.google.com/file/d/1AEz0DDbYDZNH4sr37gOw6oJ9wLroTdyY/view?usp=drivesdk',
-  github: 'https://github.com/AlfrinP',
-  hackerrank: 'https://www.hackerrank.com/profile/alfrinpoulose',
-  linkedin: 'https://www.linkedin.com/in/alfrinpoulose/',
+  resume:
+    "https://drive.google.com/file/d/1AEz0DDbYDZNH4sr37gOw6oJ9wLroTdyY/view?usp=drivesdk",
+  github: "https://github.com/AlfrinP",
+  hackerrank: "https://www.hackerrank.com/profile/alfrinpoulose",
+  linkedin: "https://www.linkedin.com/in/alfrinpoulose/",
 };
 
 export { work, experience, links };

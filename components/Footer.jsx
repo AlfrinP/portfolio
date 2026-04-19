@@ -1,5 +1,5 @@
-import { links } from '@/data';
-import Link from 'next/link';
+import { links } from "@/data";
+import Link from "next/link";
 
 function Footer() {
   return (

@@ -1,4 +1,4 @@
-import { experience } from '@/data';
+import { experience } from "@/data";
 
 function Experience() {
   return (
@@ -21,7 +21,9 @@ function Experience() {
                 <div className="text-2xl  text-[#2F1C6A] font-semibold text-left">
                   {item.position}
                 </div>
-                <div className="text-lg  text-[#404041] text-right">{item.date}</div>
+                <div className="text-lg  text-[#404041] text-right">
+                  {item.date}
+                </div>
               </div>
               <div className="text-xl font-semibold">{item.company}</div>
               <p className="text-justify">{item.description}</p>

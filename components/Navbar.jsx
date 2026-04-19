@@ -1,12 +1,12 @@
-'use client';
-import { useState } from 'react';
-import close from '../public/images/close.svg';
-import burger from '../public/images/burger-menu.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { links } from '@/data';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import { useState } from "react";
+import close from "../public/images/close.svg";
+import burger from "../public/images/burger-menu.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { links } from "@/data";
+import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -22,7 +22,11 @@ function Navbar() {
           <div className="dropdown">
             {click ? (
               <>
-                <div tabIndex="0" className="btn btn-ghost lg:hidden" onClick={handleClick}>
+                <div
+                  tabIndex="0"
+                  className="btn btn-ghost lg:hidden"
+                  onClick={handleClick}
+                >
                   <Image
                     alt="image"
                     width={50}
@@ -62,7 +66,11 @@ function Navbar() {
                 </ul>
               </>
             ) : (
-              <div tabIndex="0" className="btn btn-ghost lg:hidden" onClick={handleClick}>
+              <div
+                tabIndex="0"
+                className="btn btn-ghost lg:hidden"
+                onClick={handleClick}
+              >
                 <Image
                   alt="image"
                   width={50}
@@ -73,7 +81,10 @@ function Navbar() {
               </div>
             )}
           </div>
-          <Link href="#hero" className="btn btn-ghost text-xl capitalize hidden lg:center">
+          <Link
+            href="#hero"
+            className="btn btn-ghost text-xl capitalize hidden lg:center"
+          >
             Alfrin Poulose
           </Link>
         </div>

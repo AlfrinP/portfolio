@@ -1,10 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
 @font-face {
-  font-family: 'Neue';
-  src: url('../public/fonts/NeueMachina-Regular.woff2') format('woff2');
+  font-family: "Neue";
+  src: url("../public/fonts/NeueMachina-Regular.woff2") format("woff2");
 }
 
 @layer components {

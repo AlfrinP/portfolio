@@ -1,20 +1,20 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: 'rgba(111, 112, 242, 1)',
+        primary: "rgba(111, 112, 242, 1)",
       },
       fontFamily: {
-        primary: 'Neue',
+        primary: "Neue",
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [],
 } satisfies Config;

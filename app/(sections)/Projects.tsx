@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { work } from '../../data';
-import Image from 'next/image';
-import Link from 'next/link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { work } from "../../data";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -11,7 +11,9 @@ export default function Projects() {
       id="work"
       className="w-full font-primary flex flex-col items-center justify-center px-5 sm:px-8 md:px-11 lg:px-14 py-16 bg-white text-black"
     >
-      <h2 className="text-4xl font-bold mb-12 text-[#2F1C6A]">Featured Works</h2>
+      <h2 className="text-4xl font-bold mb-12 text-[#2F1C6A]">
+        Featured Works
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {work.map((item, index) => (
@@ -38,7 +40,10 @@ export default function Projects() {
                   className="bg-white rounded-full p-4 hover:scale-110 transition-transform duration-200"
                   aria-label="View GitHub repository"
                 >
-                  <FontAwesomeIcon icon={faGithub} className="size-6 text-gray-900" />
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="size-6 text-gray-900"
+                  />
                 </Link>
                 <Link
                   href={item.demo}
@@ -57,7 +62,9 @@ export default function Projects() {
 
             {/* Card Content */}
             <div className="p-6 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-[#2F1C6A] mb-3">{item.title}</h3>
+              <h3 className="text-xl font-bold text-[#2F1C6A] mb-3">
+                {item.title}
+              </h3>
               <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
                 {item.shortDescription}
               </p>
