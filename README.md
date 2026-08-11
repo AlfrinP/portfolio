@@ -1,6 +1,6 @@
 # Astro + React + TypeScript + shadcn/ui
 
-This is a template for a new Astro project with React, TypeScript, and shadcn/ui.
+This is a template for a new Astro project with Astro framework, TypeScript, and shadcn/ui.
 
 ## Adding components
 
