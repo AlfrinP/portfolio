@@ -1,0 +1,211 @@
+---
+import Layout from "@/layouts/main.astro"
+---
+
+<Layout title="A High Performance LLM Inference Engine — Alfrin" activeTab="projects">
+  <main class="max-w-[1440px] mx-auto w-full px-6 md:px-8 py-12 font-['JetBrains_Mono']">
+    <!-- Breadcrumb -->
+    <div class="mb-10">
+      <a 
+        href="/#projects" 
+        class="inline-flex items-center gap-2 text-[#c1c6d7] hover:text-[#adc6ff] transition-colors group text-xs uppercase tracking-widest"
+      >
+        <span class="material-symbols-outlined text-[16px] transform group-hover:-translate-x-1 transition-transform">arrow_left_alt</span>
+        <span>BACK TO PROJECTS</span>
+      </a>
+    </div>
+
+    <!-- Hero Header Box -->
+    <header class="mb-16 border border-[#262626] p-6 sm:p-8 lg:p-12 relative corner-mark corner-mark-tl corner-mark-tr corner-mark-bl corner-mark-br bg-[#101014]">
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 gap-6">
+        <div>
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#e0e2ed] mb-4 font-['Geist'] leading-tight">
+            A High Performance LLM Inference Engine
+          </h1>
+          <p class="font-['Geist'] text-sm sm:text-base text-[#c1c6d7] max-w-3xl leading-relaxed">
+            A custom-built inference engine designed to minimize memory bandwidth bottlenecks in large language model deployment. Implemented entirely in C++ and CUDA, bypassing Python interpreter overhead to achieve near-theoretical memory bandwidth utilization.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 text-xs text-[#c1c6d7] uppercase tracking-wider">
+          <div class="flex items-center gap-2 px-3 py-1.5 border border-[#262626] bg-[#09090B]">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#adc6ff] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#adc6ff]"></span>
+            </span>
+            <span>Project / 01</span>
+          </div>
+          <div class="px-3 py-1.5 border border-[#262626] bg-[#09090B] text-[#adc6ff]">Systems / AI</div>
+          <div class="px-3 py-1.5 border border-[#262626] bg-[#09090B]">2026</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-[#262626]">
+        <a 
+          href="https://github.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-4 border border-[#262626] hover:border-[#adc6ff] hover:bg-[#adc6ff]/5 transition-all group bg-[#09090B]"
+        >
+          <span class="text-xs text-[#e0e2ed] uppercase tracking-widest group-hover:text-[#adc6ff] transition-colors">Source Code</span>
+          <span class="material-symbols-outlined text-[#c1c6d7] group-hover:text-[#adc6ff] transition-colors">code</span>
+        </a>
+        
+        <a 
+          href="#architecture" 
+          class="flex items-center justify-between p-4 border border-[#262626] hover:border-[#adc6ff] hover:bg-[#adc6ff]/5 transition-all group bg-[#09090B]"
+        >
+          <span class="text-xs text-[#e0e2ed] uppercase tracking-widest group-hover:text-[#adc6ff] transition-colors">Technical Docs</span>
+          <span class="material-symbols-outlined text-[#c1c6d7] group-hover:text-[#adc6ff] transition-colors">description</span>
+        </a>
+
+        <a 
+          href="#" 
+          class="flex items-center justify-between p-4 border border-[#262626] hover:border-[#adc6ff] hover:bg-[#adc6ff]/5 transition-all group bg-[#09090B]"
+        >
+          <span class="text-xs text-[#e0e2ed] uppercase tracking-widest group-hover:text-[#adc6ff] transition-colors">Live Demo</span>
+          <span class="material-symbols-outlined text-[#c1c6d7] group-hover:text-[#adc6ff] transition-colors">open_in_new</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Layout Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <!-- Main Content -->
+      <div class="lg:col-span-9 space-y-16">
+        <!-- Problem Statement -->
+        <section>
+          <h2 class="text-xs text-[#adc6ff] uppercase tracking-widest mb-6 flex items-center">
+            <span class="w-8 h-[1px] bg-[#adc6ff] mr-4"></span>
+            THE PROBLEM
+          </h2>
+          <div class="font-['Geist'] text-base text-[#e0e2ed] space-y-4 leading-relaxed">
+            <p>
+              In modern Large Language Model (LLM) deployment, computation is rarely the primary bottleneck during sequence generation. The principal constraint is memory bandwidth—specifically, loading massive parameter matrices from High Bandwidth Memory (HBM) into the Streaming Multiprocessors (SMs) on the GPU for every single token generated.
+            </p>
+            <p>
+              Standard Python-based frameworks add significant kernel dispatch latency and host-to-device memory allocation overhead, masking true hardware capabilities. The objective of this project was to eliminate intermediate abstractions and address the memory wall directly at the CUDA kernel level.
+            </p>
+          </div>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section id="architecture">
+          <h2 class="text-xs text-[#adc6ff] uppercase tracking-widest mb-6 flex items-center">
+            <span class="w-8 h-[1px] bg-[#adc6ff] mr-4"></span>
+            TECHNICAL ARCHITECTURE
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="border border-[#262626] p-6 bg-[#101014] hover:border-[#adc6ff]/50 transition-colors">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-[#adc6ff]">memory</span>
+                <h3 class="text-xs text-[#e0e2ed] uppercase tracking-widest font-bold">Custom CUDA Kernels</h3>
+              </div>
+              <p class="font-['Geist'] text-sm text-[#c1c6d7] leading-relaxed">
+                Developed fused matrix-vector multiplication kernels to maximize register reuse and minimize L2 cache misses. Implemented tiled memory access patterns specifically tuned for NVIDIA Ampere and Hopper GPU architectures.
+              </p>
+            </div>
+
+            <div class="border border-[#262626] p-6 bg-[#101014] hover:border-[#adc6ff]/50 transition-colors">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-[#adc6ff]">speed</span>
+                <h3 class="text-xs text-[#e0e2ed] uppercase tracking-widest font-bold">Paginated KV Cache</h3>
+              </div>
+              <p class="font-['Geist'] text-sm text-[#c1c6d7] leading-relaxed">
+                Implemented a paginated Key-Value cache system in native C++, enabling zero-copy memory management, non-contiguous page allocation, and fragmentation-free batching across variable-length sequences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Code Snippet Card -->
+          <div class="border border-[#262626] bg-[#09090B] p-6 rounded-sm mb-8 overflow-x-auto shadow-lg">
+            <div class="flex justify-between items-center mb-4 border-b border-[#262626] pb-3 text-xs text-[#c1c6d7]">
+              <span class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-[#adc6ff]">code</span>
+                kernel_fused_attention.cu
+              </span>
+              <span class="text-[#8b90a0]">CUDA C++ / FP16</span>
+            </div>
+            
+            <pre class="text-xs text-[#e0e2ed] leading-relaxed"><code is:raw><span class="text-[#8b90a0]">// Fused FlashAttention-v2 style CUDA kernel implementation</span>
+<span class="text-[#F97316]">__global__ void</span> <span class="text-[#adc6ff]">flash_attention_v2_kernel</span>(
+    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> Q,
+    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> K,
+    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> V,
+    <span class="text-[#F97316]">half</span>* <span class="text-[#F97316]">__restrict__</span> O,
+    <span class="text-[#F97316]">const int</span> seq_len,
+    <span class="text-[#F97316]">const int</span> head_dim
+) {
+    <span class="text-[#8b90a0]">// Shared memory allocations for tiling</span>
+    <span class="text-[#F97316]">extern __shared__ half</span> s_mem[];
+    <span class="text-[#F97316]">half</span>* s_Q = s_mem;
+    <span class="text-[#F97316]">half</span>* s_K = &amp;s_mem[BLOCK_SIZE * head_dim];
+    
+    <span class="text-[#8b90a0]">// Grid-stride loop structure for coalesced memory loading</span>
+    <span class="text-[#F97316]">int</span> tid = threadIdx.x;
+    <span class="text-[#F97316]">int</span> bid = blockIdx.x;
+    
+    <span class="text-[#8b90a0]">// Load Q tile into shared memory (SRAM)</span>
+    <span class="text-[#F97316]">#pragma unroll</span>
+    <span class="text-[#F97316]">for</span> (<span class="text-[#F97316]">int</span> i = tid; i &lt; BLOCK_SIZE * head_dim; i += blockDim.x) {
+        s_Q[i] = Q[bid * BLOCK_SIZE * head_dim + i];
+    }
+    <span class="text-[#F97316]">__syncthreads</span>();
+
+    <span class="text-[#8b90a0]">// Perform online softmax and gemm reduction</span>
+    <span class="text-[#8b90a0]">// ... (Tiled computation omitted for brevity)</span>
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- What I Learned -->
+        <section>
+          <h2 class="text-xs text-[#adc6ff] uppercase tracking-widest mb-6 flex items-center">
+            <span class="w-8 h-[1px] bg-[#adc6ff] mr-4"></span>
+            WHAT I LEARNED
+          </h2>
+          <div class="font-['Geist'] text-base text-[#e0e2ed] space-y-4 leading-relaxed">
+            <p>
+              Building this engine from raw primitives reinforced that high performance in modern AI is predominantly a memory management problem, not a compute capability issue. Navigating the CUDA memory hierarchy (Global Memory → L2 Cache → Shared Memory SRAM → Warp Registers) effectively makes the difference between achieving 25% versus 90%+ theoretical hardware utilization.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-3 space-y-8">
+        <div class="border border-[#262626] p-6 bg-[#101014] sticky top-24">
+          <h3 class="text-xs text-[#e0e2ed] uppercase tracking-widest mb-6 border-b border-[#262626] pb-3 font-bold">
+            TECHNOLOGIES
+          </h3>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs px-3 py-1 bg-[#09090B] border border-[#262626] text-[#c1c6d7]">C++20</span>
+            <span class="text-xs px-3 py-1 bg-[#09090B] border border-[#262626] text-[#c1c6d7]">CUDA 12</span>
+            <span class="text-xs px-3 py-1 bg-[#09090B] border border-[#262626] text-[#c1c6d7]">Python</span>
+            <span class="text-xs px-3 py-1 bg-[#09090B] border border-[#262626] text-[#c1c6d7]">PyTorch C++</span>
+            <span class="text-xs px-3 py-1 bg-[#09090B] border border-[#262626] text-[#c1c6d7]">CMake</span>
+          </div>
+
+          <h3 class="text-xs text-[#e0e2ed] uppercase tracking-widest mb-6 border-b border-[#262626] pb-3 font-bold">
+            BENCHMARK METRICS
+          </h3>
+          <ul class="space-y-4">
+            <li class="p-3 bg-[#09090B] border border-[#262626]">
+              <div class="text-xs text-[#8b90a0] mb-1">Latency Reduction</div>
+              <div class="text-lg text-[#adc6ff] font-bold">~45% vs Baseline</div>
+            </li>
+            <li class="p-3 bg-[#09090B] border border-[#262626]">
+              <div class="text-xs text-[#8b90a0] mb-1">Single-GPU Throughput</div>
+              <div class="text-lg text-[#adc6ff] font-bold">3,200 tok/sec (A100)</div>
+            </li>
+            <li class="p-3 bg-[#09090B] border border-[#262626]">
+              <div class="text-xs text-[#8b90a0] mb-1">Memory Bandwidth Util</div>
+              <div class="text-lg text-[#10B981] font-bold">92.4% Peak HBM</div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+</Layout>
