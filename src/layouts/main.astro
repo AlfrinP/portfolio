@@ -2,6 +2,7 @@
 import "@/styles/global.css"
 import Nav from "@/components/Nav.astro"
 import Footer from "@/components/Footer.astro"
+import { siteData } from "@/data/data"
 
 interface Props {
   title?: string;
@@ -10,8 +11,8 @@ interface Props {
 }
 
 const { 
-  title = "Alfrin Poulose — Engineering Notebook", 
-  description = "Software Engineer building high-performance systems, AI inference engines, and database internals.",
+  title = `${siteData.profile.name} — ${siteData.profile.titleSuffix}`,
+  description = siteData.profile.description,
   activeTab = "home"
 } = Astro.props;
 ---

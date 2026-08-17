@@ -1,33 +1,52 @@
 ---
 import Layout from "@/layouts/main.astro"
+import { siteData } from "@/data/data"
 ---
 
-<Layout title="Alfrin Poulose — Engineering Notebook" activeTab="home">
-  <main class="max-w-[1440px] mx-auto w-full px-6 md:px-8 py-12 md:py-24 space-y-24 md:space-y-32">
+<Layout title={`${siteData.profile.name} — ${siteData.profile.titleSuffix}`} activeTab="home">
+  <main
+    class="mx-auto w-full max-w-[1440px] space-y-24 px-6 py-12 md:space-y-32 md:px-8 md:py-24"
+  >
     <!-- Hero Section -->
-    <section class="grid-bg border border-[#262626] p-6 sm:p-10 md:p-16 corner-marks relative overflow-hidden bg-[#10131b]">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#10131b] pointer-events-none"></div>
+    <section
+      class="grid-bg corner-marks relative overflow-hidden border border-[#262626] bg-[#10131b] p-6 sm:p-10 md:p-16"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-[#10131b]"
+      >
+      </div>
       <div class="relative z-10 max-w-3xl">
-        <h1 class="font-['Geist'] text-4xl sm:text-5xl md:text-[64px] md:leading-[72px] font-bold text-[#e0e2ed] mb-6 uppercase tracking-tight">
-          ALFRIN POULOSE
+        <h1
+          class="mb-6 font-['Geist'] text-4xl font-bold tracking-tight text-[#e0e2ed] uppercase sm:text-5xl md:text-[64px] md:leading-[72px]"
+        >
+          {siteData.profile.name}
         </h1>
-        
-        <div class="flex flex-wrap gap-2.5 mb-8 font-['JetBrains_Mono'] text-xs">
-          <span class="px-2.5 py-1 border border-[#262626] text-[#adc6ff] bg-[#0A0A0A] tracking-wider">SOFTWARE ENGINEER</span>
-          <span class="px-2.5 py-1 border border-[#262626] text-[#c1c6d7] bg-[#0A0A0A] tracking-wider">AI</span>
-          <span class="px-2.5 py-1 border border-[#262626] text-[#c1c6d7] bg-[#0A0A0A] tracking-wider">SYSTEMS</span>
-          <span class="px-2.5 py-1 border border-[#262626] text-[#c1c6d7] bg-[#0A0A0A] tracking-wider">PERFORMANCE</span>
-          <span class="px-2.5 py-1 border border-[#262626] text-[#c1c6d7] bg-[#0A0A0A] tracking-wider">OPEN SOURCE</span>
+
+        <div
+          class="mb-8 flex flex-wrap gap-2.5 font-['JetBrains_Mono'] text-xs"
+        >
+          <span
+            class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 tracking-wider text-[#adc6ff]"
+            >{siteData.profile.role}</span
+          >
+          {siteData.profile.interests.map((interest) => <span class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 tracking-wider text-[#c1c6d7]">{interest}</span>)}
         </div>
 
-        <p class="font-['Geist'] text-base md:text-[20px] md:leading-[32px] text-[#c1c6d7] mb-10 leading-relaxed">
-          I build reliable, high-performance software systems. My core interest lies in understanding abstractions deeply—from the database engine up to distributed AI inference layers—and removing friction for other developers.
+        <p
+          class="mb-10 font-['Geist'] text-base leading-relaxed text-[#c1c6d7] md:text-[20px] md:leading-[32px]"
+        >
+          {siteData.profile.bio}
         </p>
 
         <div class="flex items-center gap-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-[#e1e0ff] animate-pulse shadow-[0_0_8px_rgba(225,224,255,0.6)]"></div>
-          <span class="font-['JetBrains_Mono'] text-xs text-[#c0c1ff] uppercase tracking-widest">
-            Currently Exploring: Distributed Consensus & Hardware Acceleration
+          <div
+            class="h-2.5 w-2.5 animate-pulse rounded-full bg-[#e1e0ff] shadow-[0_0_8px_rgba(225,224,255,0.6)]"
+          >
+          </div>
+          <span
+            class="font-['JetBrains_Mono'] text-xs tracking-widest text-[#c0c1ff] uppercase"
+          >
+            Currently Exploring: {siteData.profile.currentlyExploring}
           </span>
         </div>
       </div>
@@ -35,58 +54,103 @@ import Layout from "@/layouts/main.astro"
 
     <!-- Notebook Section -->
     <section class="space-y-10" id="notebook">
-      <div class="border-b border-[#262626] pb-4 flex justify-between items-end">
+      <div
+        class="flex items-end justify-between border-b border-[#262626] pb-4"
+      >
         <div>
-          <h2 class="font-['Geist'] text-2xl md:text-3xl font-semibold text-[#e0e2ed]">Notebook</h2>
-          <p class="font-['Geist'] text-sm text-[#c1c6d7] mt-1">Technical deep-dives into computer systems, databases, and compilers.</p>
+          <h2
+            class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
+          >
+            Notebook
+          </h2>
+          <p class="mt-1 font-['Geist'] text-sm text-[#c1c6d7]">
+            Technical deep-dives into computer systems, databases, and
+            compilers.
+          </p>
         </div>
-        <a href="#notebook" class="font-['JetBrains_Mono'] text-xs text-[#adc6ff] hover:text-[#4b8eff] transition-colors tracking-widest uppercase">
+        <a
+          href="#notebook"
+          class="font-['JetBrains_Mono'] text-xs tracking-widest text-[#adc6ff] uppercase transition-colors hover:text-[#4b8eff]"
+        >
           VIEW ALL
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <!-- Post 01 -->
-        <a href="/notebook/how-databases-find-data" class="block group">
-          <article class="border border-[#262626] bg-[#0b0e16] p-6 sm:p-8 hover:border-[#414755] transition-all duration-300 corner-marks flex flex-col h-full group-hover:bg-[#181c23]/50">
-            <div class="flex justify-between items-start mb-4 font-['JetBrains_Mono'] text-xs">
+        <a href="/notebook/how-databases-find-data" class="group block">
+          <article
+            class="corner-marks flex h-full flex-col border border-[#262626] bg-[#0b0e16] p-6 transition-all duration-300 group-hover:bg-[#181c23]/50 hover:border-[#414755] sm:p-8"
+          >
+            <div
+              class="mb-4 flex items-start justify-between font-['JetBrains_Mono'] text-xs"
+            >
               <span class="text-[#c1c6d7]">POST / 01</span>
-              <span class="px-2 py-0.5 bg-[#adc6ff]/10 text-[#adc6ff] border border-[#adc6ff]/20 rounded-sm">NEW</span>
+              <span
+                class="rounded-sm border border-[#adc6ff]/20 bg-[#adc6ff]/10 px-2 py-0.5 text-[#adc6ff]"
+                >NEW</span
+              >
             </div>
-            
-            <h3 class="font-['Geist'] text-xl font-semibold mb-4 text-[#e0e2ed] group-hover:text-[#adc6ff] transition-colors leading-snug">
+
+            <h3
+              class="mb-4 font-['Geist'] text-xl leading-snug font-semibold text-[#e0e2ed] transition-colors group-hover:text-[#adc6ff]"
+            >
               HOW DOES A DATABASE ACTUALLY FIND YOUR DATA?
             </h3>
-            
-            <p class="font-['Geist'] text-sm text-[#c1c6d7] flex-grow mb-6 leading-relaxed">
-              A deep dive into B-Trees, LSM Trees, and the underlying storage engines that power modern persistence layers. Understanding the mechanics beneath the abstraction.
+
+            <p
+              class="mb-6 flex-grow font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]"
+            >
+              A deep dive into B-Trees, LSM Trees, and the underlying storage
+              engines that power modern persistence layers. Understanding the
+              mechanics beneath the abstraction.
             </p>
-            
-            <div class="flex items-center gap-2 text-[#adc6ff] font-['JetBrains_Mono'] text-xs mt-auto pt-2">
+
+            <div
+              class="mt-auto flex items-center gap-2 pt-2 font-['JetBrains_Mono'] text-xs text-[#adc6ff]"
+            >
               <span>READ ENTRY</span>
-              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <span
+                class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1"
+                >arrow_forward</span
+              >
             </div>
           </article>
         </a>
 
         <!-- Post 02 -->
-        <a href="/notebook/how-databases-find-data" class="block group">
-          <article class="border border-[#262626] bg-[#0b0e16] p-6 sm:p-8 hover:border-[#414755] transition-all duration-300 corner-marks flex flex-col h-full group-hover:bg-[#181c23]/50">
-            <div class="flex justify-between items-start mb-4 font-['JetBrains_Mono'] text-xs">
+        <a href="/notebook/how-databases-find-data" class="group block">
+          <article
+            class="corner-marks flex h-full flex-col border border-[#262626] bg-[#0b0e16] p-6 transition-all duration-300 group-hover:bg-[#181c23]/50 hover:border-[#414755] sm:p-8"
+          >
+            <div
+              class="mb-4 flex items-start justify-between font-['JetBrains_Mono'] text-xs"
+            >
               <span class="text-[#c1c6d7]">POST / 02</span>
             </div>
-            
-            <h3 class="font-['Geist'] text-xl font-semibold mb-4 text-[#e0e2ed] group-hover:text-[#adc6ff] transition-colors leading-snug">
+
+            <h3
+              class="mb-4 font-['Geist'] text-xl leading-snug font-semibold text-[#e0e2ed] transition-colors group-hover:text-[#adc6ff]"
+            >
               REVERSE ENGINEERING A TOY COMPILER
             </h3>
-            
-            <p class="font-['Geist'] text-sm text-[#c1c6d7] flex-grow mb-6 leading-relaxed">
-              Breaking down the lexing, parsing, and code generation phases by building a minimal compiler from scratch in Rust. Learning through deconstruction.
+
+            <p
+              class="mb-6 flex-grow font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]"
+            >
+              Breaking down the lexing, parsing, and code generation phases by
+              building a minimal compiler from scratch in Rust. Learning through
+              deconstruction.
             </p>
-            
-            <div class="flex items-center gap-2 text-[#adc6ff] font-['JetBrains_Mono'] text-xs mt-auto pt-2">
+
+            <div
+              class="mt-auto flex items-center gap-2 pt-2 font-['JetBrains_Mono'] text-xs text-[#adc6ff]"
+            >
               <span>READ ENTRY</span>
-              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <span
+                class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1"
+                >arrow_forward</span
+              >
             </div>
           </article>
         </a>
@@ -96,60 +160,106 @@ import Layout from "@/layouts/main.astro"
     <!-- Projects Section -->
     <section class="space-y-10" id="projects">
       <div class="border-b border-[#262626] pb-4">
-        <h2 class="font-['Geist'] text-2xl md:text-3xl font-semibold text-[#e0e2ed]">Selected Projects</h2>
-        <p class="font-['Geist'] text-sm text-[#c1c6d7] mt-1">Production-ready open-source engines and system tools.</p>
+        <h2
+          class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
+        >
+          Selected Projects
+        </h2>
+        <p class="mt-1 font-['Geist'] text-sm text-[#c1c6d7]">
+          Production-ready open-source engines and system tools.
+        </p>
       </div>
 
       <!-- Main Showcase Project Card -->
-      <div class="border border-[#262626] bg-[#181c23] corner-marks overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-xl">
+      <div
+        class="corner-marks grid grid-cols-1 overflow-hidden border border-[#262626] bg-[#181c23] shadow-xl lg:grid-cols-12"
+      >
         <!-- Left Content: Technical Description -->
-        <div class="lg:col-span-7 p-6 sm:p-8 md:p-12 flex flex-col border-b lg:border-b-0 lg:border-r border-[#262626]">
-          <div class="flex items-center gap-4 mb-6 font-['JetBrains_Mono'] text-xs">
-            <span class="text-[#adc6ff] bg-[#adc6ff]/10 px-2.5 py-1 border border-[#adc6ff]/20">PROJECT / 01</span>
-            <div class="flex-grow h-[1px] bg-[#262626]"></div>
+        <div
+          class="flex flex-col border-b border-[#262626] p-6 sm:p-8 md:p-12 lg:col-span-7 lg:border-r lg:border-b-0"
+        >
+          <div
+            class="mb-6 flex items-center gap-4 font-['JetBrains_Mono'] text-xs"
+          >
+            <span
+              class="border border-[#adc6ff]/20 bg-[#adc6ff]/10 px-2.5 py-1 text-[#adc6ff]"
+              >PROJECT / 01</span
+            >
+            <div class="h-[1px] flex-grow bg-[#262626]"></div>
           </div>
 
-          <h3 class="font-['JetBrains_Mono'] text-2xl md:text-3xl font-bold mb-6 text-[#e0e2ed] tracking-tight uppercase">
+          <h3
+            class="mb-6 font-['JetBrains_Mono'] text-2xl font-bold tracking-tight text-[#e0e2ed] uppercase md:text-3xl"
+          >
             A High Performance LLM Inference Engine
           </h3>
 
-          <p class="font-['Geist'] text-sm md:text-base text-[#c1c6d7] mb-8 leading-relaxed">
-            A custom inference engine designed to optimize memory bandwidth and reduce latency for local LLM deployment. Built in C++ and CUDA to achieve 90%+ theoretical memory bandwidth utilization.
+          <p
+            class="mb-8 font-['Geist'] text-sm leading-relaxed text-[#c1c6d7] md:text-base"
+          >
+            A custom inference engine designed to optimize memory bandwidth and
+            reduce latency for local LLM deployment. Built in C++ and CUDA to
+            achieve 90%+ theoretical memory bandwidth utilization.
           </p>
 
           <!-- Key highlights -->
-          <div class="grid grid-cols-2 gap-4 mb-8 font-['JetBrains_Mono'] text-xs">
-            <div class="p-3 bg-[#10131b] border border-[#262626]">
-              <span class="text-[#8b90a0] block mb-1">LATENCY</span>
-              <span class="text-[#adc6ff] font-bold text-sm">~45% REDUCTION</span>
+          <div
+            class="mb-8 grid grid-cols-2 gap-4 font-['JetBrains_Mono'] text-xs"
+          >
+            <div class="border border-[#262626] bg-[#10131b] p-3">
+              <span class="mb-1 block text-[#8b90a0]">LATENCY</span>
+              <span class="text-sm font-bold text-[#adc6ff]"
+                >~45% REDUCTION</span
+              >
             </div>
-            <div class="p-3 bg-[#10131b] border border-[#262626]">
-              <span class="text-[#8b90a0] block mb-1">THROUGHPUT</span>
-              <span class="text-[#adc6ff] font-bold text-sm">3,200 TOK/SEC</span>
+            <div class="border border-[#262626] bg-[#10131b] p-3">
+              <span class="mb-1 block text-[#8b90a0]">THROUGHPUT</span>
+              <span class="text-sm font-bold text-[#adc6ff]">3,200 TOK/SEC</span
+              >
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-2 mb-10 font-['JetBrains_Mono'] text-[10px]">
-            <span class="px-2.5 py-1 border border-[#262626] text-[#8b90a0] uppercase bg-[#0A0A0A]">C++</span>
-            <span class="px-2.5 py-1 border border-[#262626] text-[#8b90a0] uppercase bg-[#0A0A0A]">CUDA</span>
-            <span class="px-2.5 py-1 border border-[#262626] text-[#8b90a0] uppercase bg-[#0A0A0A]">PyTorch</span>
-            <span class="px-2.5 py-1 border border-[#262626] text-[#8b90a0] uppercase bg-[#0A0A0A]">SIMD</span>
-            <span class="px-2.5 py-1 border border-[#262626] text-[#8b90a0] uppercase bg-[#0A0A0A]">KV CACHE</span>
-          </div>
-
-          <div class="mt-auto flex flex-wrap gap-4 font-['JetBrains_Mono'] text-xs">
-            <a 
-              href="/projects/llm-inference-engine" 
-              class="inline-flex items-center gap-2 px-5 py-2.5 border border-[#adc6ff] bg-[#adc6ff]/10 text-[#adc6ff] hover:bg-[#adc6ff] hover:text-[#002e69] transition-all font-semibold"
+          <div
+            class="mb-10 flex flex-wrap gap-2 font-['JetBrains_Mono'] text-[10px]"
+          >
+            <span
+              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
+              >C++</span
             >
-              <span class="material-symbols-outlined text-[18px]">terminal</span>
+            <span
+              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
+              >CUDA</span
+            >
+            <span
+              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
+              >PyTorch</span
+            >
+            <span
+              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
+              >SIMD</span
+            >
+            <span
+              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
+              >KV CACHE</span
+            >
+          </div>
+
+          <div
+            class="mt-auto flex flex-wrap gap-4 font-['JetBrains_Mono'] text-xs"
+          >
+            <a
+              href="/projects/llm-inference-engine"
+              class="inline-flex items-center gap-2 border border-[#adc6ff] bg-[#adc6ff]/10 px-5 py-2.5 font-semibold text-[#adc6ff] transition-all hover:bg-[#adc6ff] hover:text-[#002e69]"
+            >
+              <span class="material-symbols-outlined text-[18px]">terminal</span
+              >
               EXPLORE_PROJECT
             </a>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
+            <a
+              href={siteData.links.github}
+              target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-5 py-2.5 border border-[#262626] text-[#e0e2ed] hover:bg-[#31353d] transition-colors"
+              class="inline-flex items-center gap-2 border border-[#262626] px-5 py-2.5 text-[#e0e2ed] transition-colors hover:bg-[#31353d]"
             >
               <span class="material-symbols-outlined text-[18px]">code</span>
               SOURCE_CODE
@@ -158,17 +268,22 @@ import Layout from "@/layouts/main.astro"
         </div>
 
         <!-- Right Content: Interactive Code Preview -->
-        <div class="lg:col-span-5 bg-[#0A0A0A] p-6 sm:p-8 flex flex-col justify-between font-['JetBrains_Mono']">
+        <div
+          class="flex flex-col justify-between bg-[#0A0A0A] p-6 font-['JetBrains_Mono'] sm:p-8 lg:col-span-5"
+        >
           <div class="space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-[#262626] text-xs text-[#8b90a0]">
+            <div
+              class="flex items-center justify-between border-b border-[#262626] pb-3 text-xs text-[#8b90a0]"
+            >
               <span class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#10B981]"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-[#10B981]"></span>
                 kernel_fused_attention.cu
               </span>
               <span>CUDA v12.2</span>
             </div>
 
-            <pre class="text-xs text-[#e0e2ed] overflow-x-auto leading-relaxed p-2"><code is:raw><span class="text-[#F97316]">__global__ void</span> <span class="text-[#adc6ff]">flash_attention_v2_kernel</span>(
+            <pre
+              class="overflow-x-auto p-2 text-xs leading-relaxed text-[#e0e2ed]"><code is:raw><span class="text-[#F97316]">__global__ void</span> <span class="text-[#adc6ff]">flash_attention_v2_kernel</span>(
     <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> Q,
     <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> K,
     <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> V,
@@ -188,7 +303,9 @@ import Layout from "@/layouts/main.astro"
 }</code></pre>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-[#262626] flex items-center justify-between text-xs text-[#8b90a0]">
+          <div
+            class="mt-6 flex items-center justify-between border-t border-[#262626] pt-4 text-xs text-[#8b90a0]"
+          >
             <span>Architecture: NVIDIA Ampere/Hopper</span>
             <span class="text-[#10B981]">Zero Copy Memory</span>
           </div>
@@ -199,37 +316,57 @@ import Layout from "@/layouts/main.astro"
     <!-- About Section -->
     <section class="space-y-8" id="about">
       <div class="border-b border-[#262626] pb-4">
-        <h2 class="font-['Geist'] text-2xl md:text-3xl font-semibold text-[#e0e2ed]">About & Approach</h2>
+        <h2
+          class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
+        >
+          About & Approach
+        </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="border border-[#262626] bg-[#0b0e16] p-6 corner-marks">
-          <div class="flex items-center gap-3 mb-4 text-[#adc6ff]">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
+          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
             <span class="material-symbols-outlined">memory</span>
-            <h3 class="font-['JetBrains_Mono'] text-xs uppercase tracking-wider font-bold">Low-Level Mastery</h3>
+            <h3
+              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
+            >
+              Low-Level Mastery
+            </h3>
           </div>
-          <p class="font-['Geist'] text-sm text-[#c1c6d7] leading-relaxed">
-            Understanding hardware characteristics—L1/L2 caches, register pressure, memory bandwidth—to write code that respects physical limits.
+          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
+            Understanding hardware characteristics—L1/L2 caches, register
+            pressure, memory bandwidth—to write code that respects physical
+            limits.
           </p>
         </div>
 
-        <div class="border border-[#262626] bg-[#0b0e16] p-6 corner-marks">
-          <div class="flex items-center gap-3 mb-4 text-[#adc6ff]">
+        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
+          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
             <span class="material-symbols-outlined">layers</span>
-            <h3 class="font-['JetBrains_Mono'] text-xs uppercase tracking-wider font-bold">Clear Abstractions</h3>
+            <h3
+              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
+            >
+              Clear Abstractions
+            </h3>
           </div>
-          <p class="font-['Geist'] text-sm text-[#c1c6d7] leading-relaxed">
-            Designing APIs and architectures that conceal operational complexity while keeping high performance accessible to upstream users.
+          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
+            Designing APIs and architectures that conceal operational complexity
+            while keeping high performance accessible to upstream users.
           </p>
         </div>
 
-        <div class="border border-[#262626] bg-[#0b0e16] p-6 corner-marks">
-          <div class="flex items-center gap-3 mb-4 text-[#adc6ff]">
+        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
+          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
             <span class="material-symbols-outlined">speed</span>
-            <h3 class="font-['JetBrains_Mono'] text-xs uppercase tracking-wider font-bold">Empirical Profiling</h3>
+            <h3
+              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
+            >
+              Empirical Profiling
+            </h3>
           </div>
-          <p class="font-['Geist'] text-sm text-[#c1c6d7] leading-relaxed">
-            Never guessing performance bottlenecks. Driven by micro-benchmarks, trace analysis, flamegraphs, and hardware telemetry.
+          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
+            Never guessing performance bottlenecks. Driven by micro-benchmarks,
+            trace analysis, flamegraphs, and hardware telemetry.
           </p>
         </div>
       </div>

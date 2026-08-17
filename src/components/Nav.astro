@@ -1,4 +1,6 @@
 ---
+import { siteData } from "@/data/data"
+
 interface Props {
   activeTab?: 'home' | 'notebook' | 'projects' | 'about';
 }
@@ -9,7 +11,7 @@ const { activeTab = 'home' } = Astro.props;
 <nav class="w-full sticky top-0 z-50 bg-[#10131b]/90 backdrop-blur-sm border-b border-[#414755]/50 transition-colors duration-200">
   <div class="flex justify-between items-center px-6 md:px-8 py-4 max-w-[1440px] mx-auto">
     <a href="/" class="font-['Geist'] text-2xl font-bold text-[#e0e2ed] hover:text-[#adc6ff] transition-colors">
-      Alfrin
+      {siteData.profile.shortName}
     </a>
 
     <div class="hidden md:flex gap-8 items-center font-['JetBrains_Mono'] text-xs uppercase tracking-wider">
@@ -34,15 +36,18 @@ const { activeTab = 'home' } = Astro.props;
     </div>
 
     <div class="flex items-center gap-4">
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="GitHub">
+      {siteData.links.github && <a href={siteData.links.github} target="_blank" rel="noopener noreferrer" class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="GitHub">
         <span class="material-symbols-outlined text-[20px]">code</span>
-      </a>
-      <a href="mailto:contact@alfrin.dev" class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="Contact">
+      </a>}
+      {siteData.links.email && <a href={`mailto:${siteData.links.email}`} class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="Contact">
         <span class="material-symbols-outlined text-[20px]">alternate_email</span>
-      </a>
-      <a href="/rss.xml" class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="RSS Feed">
+      </a>}
+      {siteData.links.resume && <a href={siteData.links.resume} target="_blank" rel="noopener noreferrer" class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="Resume">
+        <span class="material-symbols-outlined text-[20px]">description</span>
+      </a>}
+      {siteData.links.rss && <a href={siteData.links.rss} class="text-[#c1c6d7] hover:text-[#adc6ff] transition-colors p-1" title="RSS Feed">
         <span class="material-symbols-outlined text-[20px]">rss_feed</span>
-      </a>
+      </a>}
 
       <!-- Mobile Menu Toggle Button -->
       <button 
@@ -63,8 +68,8 @@ const { activeTab = 'home' } = Astro.props;
 >
   <div class="flex justify-between items-center mb-8 border-b border-[#262626] pb-4">
     <div>
-      <h2 class="font-['Geist'] text-xl font-bold text-[#e0e2ed]">Alfrin</h2>
-      <p class="font-['Geist'] text-xs text-[#c1c6d7] mt-0.5">Engineering Notebook</p>
+      <h2 class="font-['Geist'] text-xl font-bold text-[#e0e2ed]">{siteData.profile.shortName}</h2>
+      <p class="font-['Geist'] text-xs text-[#c1c6d7] mt-0.5">{siteData.profile.titleSuffix}</p>
     </div>
     <button id="close-drawer-btn" class="text-[#c1c6d7] hover:text-[#e0e2ed]">
       <span class="material-symbols-outlined">close</span>
