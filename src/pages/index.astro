@@ -1,374 +1,260 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { siteData } from "@/data/data"
+
+const notebookPublishedAt = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(new Date("2026-08-10T00:00:00Z"))
 ---
 
-<Layout title={`${siteData.profile.name} — ${siteData.profile.titleSuffix}`} activeTab="home">
+<Layout
+  title={`${siteData.profile.name} — ${siteData.profile.titleSuffix}`}
+  activeTab="home"
+>
   <main
-    class="mx-auto w-full max-w-[1440px] space-y-24 px-6 py-12 md:space-y-32 md:px-8 md:py-24"
+    id="main-content"
+    class="mx-auto w-full max-w-3xl px-5 pt-14 pb-28 sm:px-8 sm:pt-20 xl:pb-16"
   >
-    <!-- Hero Section -->
     <section
-      class="grid-bg corner-marks relative overflow-hidden border border-[#262626] bg-[#10131b] p-6 sm:p-10 md:p-16"
+      id="intro"
+      aria-labelledby="intro-title"
+      class="scroll-mt-10 pb-12 sm:pb-16"
     >
-      <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-[#10131b]"
-      >
-      </div>
-      <div class="relative z-10 max-w-3xl">
-        <h1
-          class="mb-6 font-['Geist'] text-4xl font-bold tracking-tight text-[#e0e2ed] uppercase sm:text-5xl md:text-[64px] md:leading-[72px]"
-        >
-          {siteData.profile.name}
-        </h1>
-
+      <div class="mb-6 flex items-center gap-4">
         <div
-          class="mb-8 flex flex-wrap gap-2.5 font-['JetBrains_Mono'] text-xs"
+          class="grid size-14 shrink-0 place-items-center border border-border bg-card text-sm font-semibold text-primary"
+          aria-hidden="true"
         >
-          <span
-            class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 tracking-wider text-[#adc6ff]"
-            >{siteData.profile.role}</span
-          >
-          {siteData.profile.interests.map((interest) => <span class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 tracking-wider text-[#c1c6d7]">{interest}</span>)}
+          AP
         </div>
-
-        <p
-          class="mb-10 font-['Geist'] text-base leading-relaxed text-[#c1c6d7] md:text-[20px] md:leading-[32px]"
-        >
-          {siteData.profile.bio}
-        </p>
-
-        <div class="flex items-center gap-3">
-          <div
-            class="h-2.5 w-2.5 animate-pulse rounded-full bg-[#e1e0ff] shadow-[0_0_8px_rgba(225,224,255,0.6)]"
+        <div>
+          <p
+            class="mb-1 text-[10px] tracking-[0.2em] text-muted-foreground uppercase"
           >
-          </div>
-          <span
-            class="font-['JetBrains_Mono'] text-xs tracking-widest text-[#c0c1ff] uppercase"
+            {siteData.profile.role}
+          </p>
+          <h1
+            id="intro-title"
+            class="text-2xl font-semibold tracking-tight text-pretty sm:text-3xl"
           >
-            Currently Exploring: {siteData.profile.currentlyExploring}
-          </span>
+            {siteData.profile.name}
+          </h1>
         </div>
       </div>
-    </section>
-
-    <!-- Notebook Section -->
-    <section class="space-y-10" id="notebook">
-      <div
-        class="flex items-end justify-between border-b border-[#262626] pb-4"
+      <p
+        class="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-[15px] sm:leading-8"
       >
-        <div>
-          <h2
-            class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
-          >
-            Notebook
-          </h2>
-          <p class="mt-1 font-['Geist'] text-sm text-[#c1c6d7]">
-            Technical deep-dives into computer systems, databases, and
-            compilers.
-          </p>
-        </div>
+        {siteData.profile.bio}
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
         <a
           href="#notebook"
-          class="font-['JetBrains_Mono'] text-xs tracking-widest text-[#adc6ff] uppercase transition-colors hover:text-[#4b8eff]"
+          class="inline-flex min-h-11 items-center justify-center gap-2 bg-primary px-4 text-xs font-medium text-primary-foreground transition-colors hover:opacity-90"
         >
-          VIEW ALL
+          Read the notebook <span aria-hidden="true">↓</span>
         </a>
-      </div>
-
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <!-- Post 01 -->
-        <a href="/notebook/how-databases-find-data" class="group block">
-          <article
-            class="corner-marks flex h-full flex-col border border-[#262626] bg-[#0b0e16] p-6 transition-all duration-300 group-hover:bg-[#181c23]/50 hover:border-[#414755] sm:p-8"
-          >
-            <div
-              class="mb-4 flex items-start justify-between font-['JetBrains_Mono'] text-xs"
-            >
-              <span class="text-[#c1c6d7]">POST / 01</span>
-              <span
-                class="rounded-sm border border-[#adc6ff]/20 bg-[#adc6ff]/10 px-2 py-0.5 text-[#adc6ff]"
-                >NEW</span
-              >
-            </div>
-
-            <h3
-              class="mb-4 font-['Geist'] text-xl leading-snug font-semibold text-[#e0e2ed] transition-colors group-hover:text-[#adc6ff]"
-            >
-              HOW DOES A DATABASE ACTUALLY FIND YOUR DATA?
-            </h3>
-
-            <p
-              class="mb-6 flex-grow font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]"
-            >
-              A deep dive into B-Trees, LSM Trees, and the underlying storage
-              engines that power modern persistence layers. Understanding the
-              mechanics beneath the abstraction.
-            </p>
-
-            <div
-              class="mt-auto flex items-center gap-2 pt-2 font-['JetBrains_Mono'] text-xs text-[#adc6ff]"
-            >
-              <span>READ ENTRY</span>
-              <span
-                class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1"
-                >arrow_forward</span
-              >
-            </div>
-          </article>
-        </a>
-
-        <!-- Post 02 -->
-        <a href="/notebook/how-databases-find-data" class="group block">
-          <article
-            class="corner-marks flex h-full flex-col border border-[#262626] bg-[#0b0e16] p-6 transition-all duration-300 group-hover:bg-[#181c23]/50 hover:border-[#414755] sm:p-8"
-          >
-            <div
-              class="mb-4 flex items-start justify-between font-['JetBrains_Mono'] text-xs"
-            >
-              <span class="text-[#c1c6d7]">POST / 02</span>
-            </div>
-
-            <h3
-              class="mb-4 font-['Geist'] text-xl leading-snug font-semibold text-[#e0e2ed] transition-colors group-hover:text-[#adc6ff]"
-            >
-              REVERSE ENGINEERING A TOY COMPILER
-            </h3>
-
-            <p
-              class="mb-6 flex-grow font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]"
-            >
-              Breaking down the lexing, parsing, and code generation phases by
-              building a minimal compiler from scratch in Rust. Learning through
-              deconstruction.
-            </p>
-
-            <div
-              class="mt-auto flex items-center gap-2 pt-2 font-['JetBrains_Mono'] text-xs text-[#adc6ff]"
-            >
-              <span>READ ENTRY</span>
-              <span
-                class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-1"
-                >arrow_forward</span
-              >
-            </div>
-          </article>
-        </a>
+        <a
+          href="#projects"
+          class="inline-flex min-h-11 items-center justify-center border border-border px-4 text-xs text-foreground transition-colors hover:bg-muted"
+          >Explore projects</a
+        >
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="space-y-10" id="projects">
-      <div class="border-b border-[#262626] pb-4">
-        <h2
-          class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
-        >
-          Selected Projects
-        </h2>
-        <p class="mt-1 font-['Geist'] text-sm text-[#c1c6d7]">
-          Production-ready open-source engines and system tools.
-        </p>
+    <section
+      id="about"
+      aria-labelledby="about-title"
+      class="scroll-mt-8 border-t border-border py-9 sm:py-11"
+    >
+      <p class="mb-2 text-[10px] tracking-[0.18em] text-primary uppercase">
+        01 / Approach
+      </p>
+      <h2 id="about-title" class="mb-4 text-lg font-semibold sm:text-xl">
+        About
+      </h2>
+      <p class="max-w-2xl text-sm leading-7 text-muted-foreground">
+        {siteData.profile.about}
+      </p>
+      <div class="mt-5 flex flex-wrap gap-2">
+        {
+          siteData.profile.interests.map((interest) => (
+            <span class="border border-border-subtle bg-card px-2.5 py-1.5 text-[10px] text-muted-foreground">
+              {interest}
+            </span>
+          ))
+        }
       </div>
+    </section>
 
-      <!-- Main Showcase Project Card -->
-      <div
-        class="corner-marks grid grid-cols-1 overflow-hidden border border-[#262626] bg-[#181c23] shadow-xl lg:grid-cols-12"
+    <section
+      id="notebook"
+      aria-labelledby="notebook-title"
+      class="scroll-mt-8 border-t border-border py-9 sm:py-11"
+    >
+      <div class="mb-2 text-[10px] tracking-[0.18em] text-primary uppercase">
+        02 / Notes & investigations
+      </div>
+      <h2 id="notebook-title" class="text-lg font-semibold sm:text-xl">
+        Notebook
+      </h2>
+      <p class="mt-2 text-xs leading-6 text-muted-foreground">
+        Things I’ve learned, broken, built, and understood.
+      </p>
+
+      <a
+        href="/notebook/how-databases-find-data"
+        class="group mt-5 block border-y border-border py-5 transition-colors hover:border-primary"
       >
-        <!-- Left Content: Technical Description -->
         <div
-          class="flex flex-col border-b border-[#262626] p-6 sm:p-8 md:p-12 lg:col-span-7 lg:border-r lg:border-b-0"
+          class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] tracking-[0.12em] text-muted-foreground uppercase"
         >
-          <div
-            class="mb-6 flex items-center gap-4 font-['JetBrains_Mono'] text-xs"
+          <span>{notebookPublishedAt}</span><span aria-hidden="true">·</span
+          ><span>8 min read</span>
+          <span class="border border-primary/40 px-2 py-1 text-primary"
+            >Databases</span
           >
-            <span
-              class="border border-[#adc6ff]/20 bg-[#adc6ff]/10 px-2.5 py-1 text-[#adc6ff]"
-              >PROJECT / 01</span
-            >
-            <div class="h-[1px] flex-grow bg-[#262626]"></div>
-          </div>
+          <span class="ml-auto text-primary">Latest</span>
+        </div>
+        <h3
+          class="max-w-2xl text-base leading-7 font-medium text-pretty text-foreground transition-colors group-hover:text-primary sm:text-lg"
+        >
+          How does a database actually find your data?
+        </h3>
+        <p class="mt-2 max-w-2xl text-xs leading-6 text-muted-foreground">
+          An exploration of B-Trees, indexes, and how relational databases
+          locate records among millions of rows.
+        </p>
+        <span
+          class="mt-4 inline-flex min-h-11 items-center gap-2 text-[10px] tracking-wider text-muted-foreground uppercase group-hover:text-primary"
+          >Read entry <span aria-hidden="true">↗</span></span
+        >
+      </a>
+    </section>
 
-          <h3
-            class="mb-6 font-['JetBrains_Mono'] text-2xl font-bold tracking-tight text-[#e0e2ed] uppercase md:text-3xl"
-          >
-            A High Performance LLM Inference Engine
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+      class="scroll-mt-8 border-t border-border py-9 sm:py-11"
+    >
+      <p class="mb-2 text-[10px] tracking-[0.18em] text-primary uppercase">
+        03 / Selected work
+      </p>
+      <h2 id="projects-title" class="text-lg font-semibold sm:text-xl">
+        Projects
+      </h2>
+
+      <article class="mt-5 border border-border bg-card">
+        <div
+          class="flex flex-wrap items-center justify-between gap-3 border-b border-border px-4 py-3 text-[10px] tracking-[0.12em] text-muted-foreground uppercase sm:px-5"
+        >
+          <span>Featured project · AI systems</span><span>01</span>
+        </div>
+        <div class="p-4 sm:p-5">
+          <h3 class="text-base leading-7 font-semibold text-pretty sm:text-lg">
+            A high-performance LLM inference engine
           </h3>
-
-          <p
-            class="mb-8 font-['Geist'] text-sm leading-relaxed text-[#c1c6d7] md:text-base"
-          >
-            A custom inference engine designed to optimize memory bandwidth and
-            reduce latency for local LLM deployment. Built in C++ and CUDA to
-            achieve 90%+ theoretical memory bandwidth utilization.
+          <p class="mt-3 max-w-2xl text-xs leading-6 text-muted-foreground">
+            A C++ and CUDA inference engine focused on memory bandwidth and
+            low-latency local model deployment.
           </p>
-
-          <!-- Key highlights -->
-          <div
-            class="mb-8 grid grid-cols-2 gap-4 font-['JetBrains_Mono'] text-xs"
-          >
-            <div class="border border-[#262626] bg-[#10131b] p-3">
-              <span class="mb-1 block text-[#8b90a0]">LATENCY</span>
-              <span class="text-sm font-bold text-[#adc6ff]"
-                >~45% REDUCTION</span
-              >
-            </div>
-            <div class="border border-[#262626] bg-[#10131b] p-3">
-              <span class="mb-1 block text-[#8b90a0]">THROUGHPUT</span>
-              <span class="text-sm font-bold text-[#adc6ff]">3,200 TOK/SEC</span
-              >
-            </div>
+          <div class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+            {
+              ["C++", "CUDA", "PyTorch", "SIMD", "KV cache"].map(
+                (technology) => (
+                  <span class="border border-border px-2.5 py-1.5 text-[10px] text-muted-foreground">
+                    {technology}
+                  </span>
+                )
+              )
+            }
           </div>
-
-          <div
-            class="mb-10 flex flex-wrap gap-2 font-['JetBrains_Mono'] text-[10px]"
+          <a
+            href="/projects/llm-inference-engine"
+            class="mt-4 inline-flex min-h-11 items-center gap-2 text-[11px] tracking-wider text-primary uppercase hover:underline"
           >
-            <span
-              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
-              >C++</span
-            >
-            <span
-              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
-              >CUDA</span
-            >
-            <span
-              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
-              >PyTorch</span
-            >
-            <span
-              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
-              >SIMD</span
-            >
-            <span
-              class="border border-[#262626] bg-[#0A0A0A] px-2.5 py-1 text-[#8b90a0] uppercase"
-              >KV CACHE</span
-            >
-          </div>
+            Explore project <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </article>
+    </section>
 
-          <div
-            class="mt-auto flex flex-wrap gap-4 font-['JetBrains_Mono'] text-xs"
-          >
-            <a
-              href="/projects/llm-inference-engine"
-              class="inline-flex items-center gap-2 border border-[#adc6ff] bg-[#adc6ff]/10 px-5 py-2.5 font-semibold text-[#adc6ff] transition-all hover:bg-[#adc6ff] hover:text-[#002e69]"
-            >
-              <span class="material-symbols-outlined text-[18px]">terminal</span
-              >
-              EXPLORE_PROJECT
-            </a>
+    <section
+      id="socials"
+      aria-labelledby="socials-title"
+      class="scroll-mt-8 border-t border-border py-9 sm:py-11"
+    >
+      <p class="mb-2 text- tracking-[0.18em] text-primary uppercase">
+        04 / Around the web
+      </p>
+      <h2 id="socials-title" class="text-lg font-semibold sm:text-xl">
+        Socials & contact
+      </h2>
+      <p class="mt-2 max-w-xl text-xs leading-6 text-muted-foreground">
+        For engineering conversations, ideas, or collaboration, you can find me
+        here.
+      </p>
+      <div class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+        {
+          siteData.links.github && (
             <a
               href={siteData.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 border border-[#262626] px-5 py-2.5 text-[#e0e2ed] transition-colors hover:bg-[#31353d]"
+              class="flex min-h-12 items-center justify-between border border-border bg-card px-4 text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              <span class="material-symbols-outlined text-[18px]">code</span>
-              SOURCE_CODE
+              <>
+                <span>GitHub</span>
+                <span aria-hidden="true">↗</span>
+              </>
             </a>
-          </div>
-        </div>
-
-        <!-- Right Content: Interactive Code Preview -->
-        <div
-          class="flex flex-col justify-between bg-[#0A0A0A] p-6 font-['JetBrains_Mono'] sm:p-8 lg:col-span-5"
-        >
-          <div class="space-y-4">
-            <div
-              class="flex items-center justify-between border-b border-[#262626] pb-3 text-xs text-[#8b90a0]"
+          )
+        }
+        {
+          siteData.links.linkedin && (
+            <a
+              href={siteData.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex min-h-12 items-center justify-between border border-border bg-card px-4 text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              <span class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#10B981]"></span>
-                kernel_fused_attention.cu
-              </span>
-              <span>CUDA v12.2</span>
-            </div>
-
-            <pre
-              class="overflow-x-auto p-2 text-xs leading-relaxed text-[#e0e2ed]"><code is:raw><span class="text-[#F97316]">__global__ void</span> <span class="text-[#adc6ff]">flash_attention_v2_kernel</span>(
-    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> Q,
-    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> K,
-    <span class="text-[#F97316]">const half</span>* <span class="text-[#F97316]">__restrict__</span> V,
-    <span class="text-[#F97316]">half</span>* <span class="text-[#F97316]">__restrict__</span> O,
-    <span class="text-[#F97316]">const int</span> seq_len,
-    <span class="text-[#F97316]">const int</span> head_dim
-) {
-    <span class="text-[#8b90a0]">// Shared memory allocations for tiling</span>
-    <span class="text-[#F97316]">extern __shared__ half</span> s_mem[];
-    <span class="text-[#F97316]">half</span>* s_Q = s_mem;
-    <span class="text-[#F97316]">half</span>* s_K = &amp;s_mem[BLOCK_SIZE * head_dim];
-
-    <span class="text-[#8b90a0]">// Grid-stride coalesced load into SRAM</span>
-    <span class="text-[#F97316]">int</span> tid = threadIdx.x;
-    <span class="text-[#F97316]">int</span> bid = blockIdx.x;
-    ...
-}</code></pre>
-          </div>
-
-          <div
-            class="mt-6 flex items-center justify-between border-t border-[#262626] pt-4 text-xs text-[#8b90a0]"
-          >
-            <span>Architecture: NVIDIA Ampere/Hopper</span>
-            <span class="text-[#10B981]">Zero Copy Memory</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="space-y-8" id="about">
-      <div class="border-b border-[#262626] pb-4">
-        <h2
-          class="font-['Geist'] text-2xl font-semibold text-[#e0e2ed] md:text-3xl"
-        >
-          About & Approach
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
-          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
-            <span class="material-symbols-outlined">memory</span>
-            <h3
-              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
+              <>
+                <span>LinkedIn</span>
+                <span aria-hidden="true">↗</span>
+              </>
+            </a>
+          )
+        }
+        {
+          siteData.links.email && (
+            <a
+              href={`mailto:${siteData.links.email}`}
+              class="flex min-h-12 min-w-0 items-center justify-between gap-3 border border-border bg-card px-4 text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Low-Level Mastery
-            </h3>
-          </div>
-          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
-            Understanding hardware characteristics—L1/L2 caches, register
-            pressure, memory bandwidth—to write code that respects physical
-            limits.
-          </p>
-        </div>
-
-        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
-          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
-            <span class="material-symbols-outlined">layers</span>
-            <h3
-              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
+              <>
+                <span class="min-w-0 break-all">Email</span>
+                <span aria-hidden="true">↗</span>
+              </>
+            </a>
+          )
+        }
+        {
+          siteData.links.resume && (
+            <a
+              href={siteData.links.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex min-h-12 items-center justify-between border border-border bg-card px-4 text-xs text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Clear Abstractions
-            </h3>
-          </div>
-          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
-            Designing APIs and architectures that conceal operational complexity
-            while keeping high performance accessible to upstream users.
-          </p>
-        </div>
-
-        <div class="corner-marks border border-[#262626] bg-[#0b0e16] p-6">
-          <div class="mb-4 flex items-center gap-3 text-[#adc6ff]">
-            <span class="material-symbols-outlined">speed</span>
-            <h3
-              class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider uppercase"
-            >
-              Empirical Profiling
-            </h3>
-          </div>
-          <p class="font-['Geist'] text-sm leading-relaxed text-[#c1c6d7]">
-            Never guessing performance bottlenecks. Driven by micro-benchmarks,
-            trace analysis, flamegraphs, and hardware telemetry.
-          </p>
-        </div>
+              <>
+                <span>Resume</span>
+                <span aria-hidden="true">↗</span>
+              </>
+            </a>
+          )
+        }
       </div>
     </section>
   </main>

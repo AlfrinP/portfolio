@@ -77,7 +77,7 @@ The primary stack is:
 * shadcn/ui
 * Markdown
 * Astro Content Collections / Content Layer
-* JetBrains Mono
+* Inter for interface text and JetBrains Mono for code
 * Static generation by default
 
 The project already has **shadcn/ui installed and configured**.
@@ -102,7 +102,7 @@ The existing shadcn configuration is the source of truth for:
 
 The project already contains the required shadcn/ui setup.
 
-If, at any point, the shadcn configuration is missing or incomplete for a token described in `design.md` (JetBrains Mono, the violet accent, dark-first theming), initialize it **once**, using `design.md` as the specification. After that initial calibration, the resulting shadcn configuration becomes authoritative — do not re-derive or second-guess those tokens again in later sessions.
+If, at any point, the shadcn configuration is missing or incomplete for a token described in `design.md` (Inter interface typography, JetBrains Mono code typography, the light-blue accent, dark-first theming), initialize it **once**, using `design.md` as the specification. After that initial calibration, the resulting shadcn configuration becomes authoritative — do not re-derive or second-guess those tokens again in later sessions.
 
 The agent must:
 
@@ -155,7 +155,7 @@ Do not:
 The existing shadcn configuration already contains the intended:
 
 ```text
-JetBrains Mono
+Inter for interface text; JetBrains Mono for code
 Violet accent
 Theme tokens
 Component styling
@@ -289,7 +289,7 @@ The custom identity consists of:
 * technical annotations
 * strong typography
 * dark-first theme
-* violet highlights
+* light-blue highlights
 * restrained motion
 * generous but controlled whitespace
 
@@ -301,13 +301,13 @@ Do not replace the underlying component system.
 
 # Primary Accent Color
 
-The project already has the required violet accent configured.
+The project uses a light-blue accent, adjusted between themes for readable contrast.
 
 Use the existing shadcn semantic tokens.
 
 Do **not** introduce another primary color.
 
-Do not hardcode the violet value throughout components.
+Do not hardcode accent values throughout components.
 
 Prefer the existing semantic tokens such as:
 
@@ -329,19 +329,19 @@ If the existing theme uses different token names, follow the existing names.
 
 # Typography
 
-The project already has **JetBrains Mono** configured.
+The project uses **Inter** for interface text and **JetBrains Mono** for code.
 
 Use the existing typography configuration.
 
 Do not:
 
-* install another font
-* introduce another primary font
+* install another interface font
+* introduce another primary interface font
 * override the global font family
 * add unnecessary font weights
-* replace JetBrains Mono with another typeface
+* replace Inter for interface text or JetBrains Mono for code without a design revision
 
-Typography hierarchy should be achieved using the existing font with:
+Typography hierarchy should be achieved using the existing fonts with:
 
 * size
 * weight
@@ -838,17 +838,7 @@ Only display information that is actually available.
 
 # Currently
 
-The Currently section signals that Alfrin is actively building and learning. It should read like a margin note in a notebook, not a resume bullet list.
-
-At minimum it should communicate:
-
-* what is currently being explored
-* what is currently being built
-* what is currently being learned
-
-Drive this entirely from `src/data/profile.ts` (`currently.exploring`, `currently.building`, `currently.learning`). Do not hardcode these values inside the component.
-
-If a field is empty, the section should degrade gracefully — hide that sub-item rather than rendering an empty heading or a broken layout. Never invent placeholder content to fill an empty field.
+Do not render a Currently section or exploration annotation on the homepage.
 
 ---
 
@@ -885,21 +875,15 @@ Pull every value from `src/data/profile.ts` (`social.email`, `social.github`, `s
 Preferred homepage structure:
 
 ```text
-Navigation
-
 Intro
 
-Currently
+About
 
 Notebook
 
 Projects
 
-Open Source / Experiments
-
-About / Experience
-
-Contact
+Socials & Contact
 
 Footer
 ```
@@ -918,18 +902,17 @@ and then:
 
 # Navigation
 
-Desktop navigation should provide access to:
+Desktop side navigation and the mobile floating bar should provide access to:
 
+* Intro
+* Socials
 * Notebook
 * Projects
 * About
-* GitHub
-* LinkedIn
-* Resume
 
 Use shadcn primitives where applicable.
 
-Mobile navigation should use the existing shadcn `Sheet` or equivalent installed primitive rather than creating a custom modal/navigation system.
+Keep social destinations together in the homepage Socials & Contact section rather than repeating them in the navigation or footer.
 
 ---
 
@@ -966,18 +949,15 @@ only when necessary.
 
 # Mobile Navigation
 
-The mobile navigation must:
+The mobile floating navigation must:
 
 * have comfortable touch targets
 * be keyboard accessible
 * expose all important navigation
 * support theme switching
-* close predictably
-* prevent inappropriate body scrolling
+* stay clear of the page content and device safe area
 
-Prefer the existing shadcn `Sheet` component.
-
-Do not install another navigation library.
+Use native links and a button for theme switching; do not add a modal navigation system.
 
 ---
 
@@ -1152,7 +1132,7 @@ If custom focus styling is necessary, use the project's existing shadcn/Tailwind
 
 # Color Accessibility
 
-Do not rely exclusively on violet to communicate information.
+Do not rely exclusively on the accent color to communicate information.
 
 For example, `NEW` should be communicated through:
 
@@ -1160,7 +1140,7 @@ For example, `NEW` should be communicated through:
 * typography
 * positioning
 
-and may additionally use violet.
+and may additionally use the light-blue accent.
 
 Ensure sufficient contrast in both themes.
 
@@ -1359,7 +1339,7 @@ When a design is imported:
    * Astro components
    * existing shadcn/ui primitives
    * Tailwind utilities
-   * the project's existing design tokens (JetBrains Mono, the configured violet accent, dark/light theme)
+   * the project's existing design tokens (Inter interface font, JetBrains Mono code font, light-blue accent, dark/light theme)
 4. Do not leave the imported HTML/CSS/JS in the codebase as-is, even temporarily.
 5. Do not introduce a competing component library, CSS framework, or class-naming convention that came from the import tool.
 6. Never add the design tool itself as a runtime or build dependency, and never add it to `package.json`. It is a design-time aid only.
@@ -1483,7 +1463,7 @@ Do not assume the theme needs to be recreated.
 The project already has (or, on first setup, should be initialized once from `design.md` to have):
 
 ```text
-JetBrains Mono
+Inter for interface text; JetBrains Mono for code
 Violet accent
 Dark/light theme
 shadcn components
@@ -1528,8 +1508,8 @@ When implementing a design:
 3. Use Tailwind for layout and responsive styling.
 4. Do not recreate shadcn primitives.
 5. Do not override global shadcn tokens.
-6. Do not replace JetBrains Mono.
-7. Do not replace the configured violet accent.
+6. Keep Inter for interface text and JetBrains Mono for code.
+7. Use the configured light-blue accent.
 8. Do not introduce another UI framework.
 9. Add custom CSS only for portfolio-specific visual effects.
 10. Preserve dark/light mode.
@@ -1733,8 +1713,8 @@ A feature is complete when:
 * it works in light mode
 * it uses existing shadcn primitives where applicable
 * it does not override the existing shadcn theme
-* it preserves JetBrains Mono
-* it preserves the configured violet accent
+* it uses Inter for interface text and JetBrains Mono for code
+* it preserves the configured light-blue accent
 * it is keyboard accessible
 * it has visible focus states
 * it does not create horizontal overflow

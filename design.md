@@ -62,26 +62,27 @@ The website should position Alfrin primarily as a software engineer interested i
 
 ## 4. Typography
 
-**Primary font:** JetBrains Mono (used throughout; do not introduce a second decorative font)
+**Primary interface font:** Inter. Use it for the navigation, headings, body copy, labels, and metadata to match the supplied visual reference. Use JetBrains Mono only for code samples and inline code.
 
 Typography hierarchy should come from: font size, font weight, line height, letter spacing, opacity, spacing, layout.
 
 | Level | Style | Used for |
 |---|---|---|
-| Display | Large, bold JetBrains Mono | Homepage identity, major section titles, important Notebook titles |
-| Heading | Medium/bold JetBrains Mono | Subsection titles, project titles, article headings |
-| Body | Regular JetBrains Mono, generous line height | Body copy |
-| Metadata | Small JetBrains Mono, uppercase, increased letter spacing, muted color | e.g. `AUG 10, 2026 · 8 MIN READ` |
+| Display | Large, bold Inter | Homepage identity, major section titles, important Notebook titles |
+| Heading | Medium/bold Inter | Subsection titles, project titles, article headings |
+| Body | Regular Inter, generous line height | Body copy |
+| Metadata | Small Inter, uppercase, increased letter spacing, muted color | e.g. `AUG 10, 2026 · 8 MIN READ` |
 
-Typography should feel closer to technical documentation than a marketing website.
+Typography should feel clear and editorial, matching the supplied reference rather than a monospace-heavy developer portfolio. Code remains monospaced for readability.
 
 ## 5. Color System
 
-**Primary accent:**
+**Primary accent:** a restrained light blue, adapted for contrast in each theme.
 ```css
---color-primary: rgba(111, 112, 242, 1); /* #6F70F2 */
+--color-primary-dark-theme: #8BBCE8;
+--color-primary-light-theme: #3976AD;
 ```
-Violet must be an accent, not the dominant color.
+Blue is an accent, not the dominant color.
 
 ### Dark Mode (default)
 
@@ -97,7 +98,7 @@ Violet must be an accent, not the dominant color.
 --color-border: #27272A;
 --color-border-subtle: #1F1F23;
 
---color-primary: #6F70F2;
+--color-primary: #8BBCE8;
 ```
 The background should be almost black rather than pure `#000000`.
 
@@ -117,9 +118,9 @@ Light mode should feel like the same notebook exposed to daylight — do not sim
 --color-border: #D4D4D8;
 --color-border-subtle: #E4E4E7;
 
---color-primary: #6F70F2;
+--color-primary: #3976AD;
 ```
-The violet should remain consistent across themes.
+Use the same light-blue hue in both themes and adjust its brightness for readable contrast.
 
 ## 7. Theme Behavior
 
@@ -152,38 +153,30 @@ Use restrained visual details such as:
 
 - Section numbers: `01` `02` `03`
 - Small labels: `NOTEBOOK / 2026`, `PROJECT / 03`, `CURRENTLY`, `OPEN SOURCE`
-- Tiny violet indicators: `●`
+- Tiny light-blue indicators: `●`
 - Corner marks
 - Fine horizontal rules
+- Fine dotted rules spanning each section to create a ruled-notebook rhythm
 - Small technical annotations
 
 These should create texture without becoming distracting.
 
 ## 10. Navigation
 
-Desktop navigation should be minimal.
+Desktop navigation should be a compact, fixed side index with a visible current-section state. Mobile navigation should be a floating bottom bar with comfortable touch targets. Do not render a top navigation bar.
 
-```
-ALFRIN                         NOTEBOOK   PROJECTS   ABOUT
-```
-
-Secondary actions: GitHub, LinkedIn, Resume ↗
-
-The navigation should remain visually lightweight. The active page can use violet text, a small violet dot, or a subtle underline. Do not use giant navigation pills.
+The navigation should remain visually lightweight. Mark the active section with light-blue text and a subtle rule. Keep all social and contact links together in one homepage section.
 
 ## 11. Homepage Structure
 
 Single coherent narrative:
 
-1. Navigation
-2. Intro
-3. Currently
-4. Notebook
-5. Projects
-6. Open Source / Experiments
-7. About / Experience
-8. Contact
-9. Footer
+1. Intro
+2. About
+3. Notebook
+4. Projects
+5. Socials & Contact
+6. Footer
 
 ## 12. Intro / Hero
 
@@ -203,37 +196,7 @@ underneath the abstractions.
 
 Avoid oversized marketing copy. The hero should feel personal and direct.
 
-## 13. Hero Secondary Annotation
-
-Include a small technical-style status line, e.g.:
-
-```
-CURRENTLY EXPLORING
-→ AI systems
-→ performance engineering
-→ distributed systems
-```
-
-This can be dynamic/content-driven and should be easy to update through the profile data file.
-
-## 14. Currently Section
-
-Communicates that the person is actively learning and building — should feel like a notebook margin rather than a conventional resume section.
-
-```
-CURRENTLY
-
-EXPLORING
-LLM inference · systems · performance
-
-BUILDING
-A small experiment in ...
-
-LEARNING
-...
-
-UPDATED OCCASIONALLY
-```
+Do not render a Currently section or hero exploration annotation on the homepage.
 
 ## 15. Notebook
 
@@ -264,7 +227,7 @@ AUG 10, 2026
 NEW
 ```
 
-The `NEW` indicator uses violet. Only the latest published post is marked `NEW`.
+The `NEW` indicator uses the light-blue accent. Only the latest published post is marked `NEW`.
 
 ## 17. Notebook Detail Page
 

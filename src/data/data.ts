@@ -1,6 +1,6 @@
 /**
  * Edit this file to update personal details and shared links across the site.
- * Leave an optional link as an empty string to hide it from navigation/footer.
+ * Leave an optional link as an empty string to hide it from the Socials & Contact section.
  */
 export const siteData = {
   profile: {
@@ -11,8 +11,9 @@ export const siteData = {
     description:
       "Software Engineer building high-performance systems, AI inference engines, and database internals.",
     bio: "I build reliable, high-performance software systems. My core interest lies in understanding abstractions deeply—from the database engine up to distributed AI inference layers—and removing friction for other developers.",
+    about:
+      "I like working from fundamentals: understand the constraints, measure how a system behaves, and design abstractions that keep complex software usable.",
     interests: ["AI", "Systems", "Performance", "Open Source"],
-    currentlyExploring: "Distributed Consensus & Hardware Acceleration",
   },
   links: {
     github: "https://github.com/AlfrinP",
@@ -23,6 +24,6 @@ export const siteData = {
   },
   footer: {
     copyrightYear: 2026,
-    tagline: "Built with technical precision.",
+    tagline: "Built with 💙",
   },
 } as const
